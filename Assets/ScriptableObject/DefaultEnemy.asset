@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18fd2a394c68c0a41ac8cbe2a8dc18a8, type: 3}
   m_Name: DefaultEnemy
   m_EditorClassIdentifier: 
+  maxHealth: 100
   walkSpeed: 3
   baseDamage: 25
-  attackCooldown: 0.5
-  attackDistance: 3
+  attackCooldown: 1.5
+  attackDistance: 1.75
   detectionDistance: 7.5

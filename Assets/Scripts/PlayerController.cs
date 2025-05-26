@@ -6,17 +6,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerSettings settings;
 
     [Header("Status")]
-    private Vector2 input;
     [SerializeField] private Rigidbody2D rb;
+    Vector2 input;
 
     [Header("Dash")]
     bool podeDash = true;
     bool estaADashar = false;
 
     [Header("Ataque")]
-    public LayerMask inimigoLayer;
-    public GameObject efeitoAtaquePrefab; // arrasta o prefab no Inspector
-    public float currentHeath;
+    [SerializeField] private LayerMask inimigoLayer;
+    [SerializeField] private GameObject efeitoAtaquePrefab; // arrasta o prefab no Inspector
+    float currentHeath;
+    bool isDead = false;
 
     void Start()
     {
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour
         // Ajusta o tamanho do efeito para caber no raio de ataque
         efeito.transform.localScale = Vector3.one * settings.raioAtaque;
 
-        // Detecção de inimigos
+        // Detecï¿½ï¿½o de inimigos
         Collider2D[] inimigos = Physics2D.OverlapCircleAll(transform.position, settings.raioAtaque, inimigoLayer);
 
         foreach (Collider2D inimigo in inimigos)
@@ -98,18 +99,19 @@ public class PlayerController : MonoBehaviour
 
             if (anguloEntre <= settings.anguloAtaque / 2f)
             {
-                /*var script = inimigo.GetComponent<Inimigo>();
-                if (script != null)
-                    script.ReceberDano(dano);*/
+                Enemy enemy = inimigo.GetComponent<Enemy>();
+                enemy.ApplyDamage(settings.dano);
             }
         }
     }
     public void ApplyDamage(float dmg)
     {
         currentHeath -= dmg;
-        if (currentHeath <= 0){
-            Debug.Log("morres-te, get better!!!");
+        if (currentHeath <= 0 && !isDead)
+        {
             currentHeath = 0;
+            isDead = true;
+            Debug.Log("morres-te, get better!!!");
         }
     }
 

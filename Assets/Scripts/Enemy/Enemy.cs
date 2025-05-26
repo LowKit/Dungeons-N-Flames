@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemySettings settings;
     [SerializeField] private NavMeshAgent navMeshAgent;
 
+
+    float currentHeath;
     Transform playerTransform;
     PlayerController playerController;
     float lastAttackTime;
@@ -26,6 +28,8 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        currentHeath = settings.maxHealth;
+
         navMeshAgent.speed = settings.walkSpeed;
 
         navMeshAgent.updateRotation = false;
@@ -41,11 +45,19 @@ public class Enemy : MonoBehaviour
 
     private void MoveToPlayer()
     {
-        if (DistanceToPlayer() <= settings.detectionDistance)
+        float distance = DistanceToPlayer();
+
+        if (distance <= settings.detectionDistance && distance > settings.attackDistance)
         {
             Vector3 position = new Vector3(playerTransform.position.x, playerTransform.position.y, 0);
+            navMeshAgent.isStopped = false;
             navMeshAgent.SetDestination(position);
         }
+        else
+        {
+            navMeshAgent.isStopped = true;
+        }
+
     }
 
     private void AttackPlayer()
@@ -53,12 +65,14 @@ public class Enemy : MonoBehaviour
         if (DistanceToPlayer() <= settings.attackDistance && !IsInAttackCooldown(settings.attackCooldown / 2) && !hasAttacked)
         {
             // Attack Player
+            playerController.ApplyDamage(settings.baseDamage);
             lastAttackTime = Time.time;
             hasAttacked = true;
         }
         else if (DistanceToPlayer() <= settings.attackDistance && !IsInAttackCooldown(settings.attackCooldown) && hasAttacked)
         {
             // Attack Player
+            playerController.ApplyDamage(settings.baseDamage);
             lastAttackTime = Time.time;
         }
         else if (DistanceToPlayer() > settings.attackDistance)
@@ -66,6 +80,17 @@ public class Enemy : MonoBehaviour
             hasAttacked = false;
         }
     }
+
+    public void ApplyDamage(float damage)
+    {
+        currentHeath -= damage;
+        if (currentHeath <= 0)
+        {
+            currentHeath = 0;
+            Debug.Log("[Enemy] Enemy died.");
+        }
+    }
+
     private bool DependenciesAreNull()
     {
         bool isNull = playerTransform == null || navMeshAgent == null || settings == null;

@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Default Enemy", menuName = "Enemies/Enemy Settings", order = 1)]
 public class EnemySettings : ScriptableObject
 {
+    [Header("Status")]
+    public int maxHealth = 100;
+
     [Header("Movement Settings")]
     public float walkSpeed = 5;
 
