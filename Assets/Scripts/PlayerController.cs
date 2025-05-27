@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Dependecias")]
     [SerializeField] private PlayerSettings settings;
+    [SerializeField] private Camera playerCamera;
 
     [Header("Status")]
     [SerializeField] private Rigidbody2D rb;
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void Atacar()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mousePos = GetMousePosition();
         Vector2 direcaoAtaque = (mousePos - transform.position).normalized;
 
         // Spawn do efeito visual
@@ -114,6 +115,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("morres-te, get better!!!");
         }
     }
+
+    public Vector3 GetMousePosition() => playerCamera.ScreenToWorldPoint(Input.mousePosition);
 
     void OnDrawGizmosSelected()
     {
