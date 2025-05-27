@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     [Header("Dependecias")]
     [SerializeField] private PlayerSettings settings;
     [SerializeField] private Camera playerCamera;
@@ -14,14 +17,14 @@ public class PlayerController : MonoBehaviour
     bool podeDash = true;
     bool estaADashar = false;
 
-    [Header("Ataque")]
-    [SerializeField] private LayerMask inimigoLayer;
-    [SerializeField] private GameObject efeitoAtaquePrefab; // arrasta o prefab no Inspector
-    float currentHeath;
+
+    public float currentHeath;
+    public static Action<float, float> OnHealthChange;
     bool isDead = false;
 
-    void Start()
+    void Awake()
     {
+        instance = this;
         currentHeath = settings.maxHealth;
         if (rb == null)
         {
@@ -45,12 +48,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && podeDash)
         {
             StartCoroutine(FazerDash());
-        }
-
-        // Ataque
-        if (Input.GetMouseButtonDown(0))
-        {
-            Atacar();
         }
     }
 
@@ -77,34 +74,7 @@ public class PlayerController : MonoBehaviour
         podeDash = true;
     }
 
-    void Atacar()
-    {
-        Vector3 mousePos = GetMousePosition();
-        Vector2 direcaoAtaque = (mousePos - transform.position).normalized;
-
-        // Spawn do efeito visual
-        Vector3 spawnPos = transform.position; //+ (Vector3)(direcaoAtaque * raioAtaque * 0.5f); // meio do raio
-        float angulo = Mathf.Atan2(direcaoAtaque.y, direcaoAtaque.x) * Mathf.Rad2Deg;
-        GameObject efeito = Instantiate(efeitoAtaquePrefab, spawnPos, Quaternion.Euler(0, 0, angulo));
-
-        // Ajusta o tamanho do efeito para caber no raio de ataque
-        efeito.transform.localScale = Vector3.one * settings.raioAtaque;
-
-        // Detec��o de inimigos
-        Collider2D[] inimigos = Physics2D.OverlapCircleAll(transform.position, settings.raioAtaque, inimigoLayer);
-
-        foreach (Collider2D inimigo in inimigos)
-        {
-            Vector2 direcaoParaInimigo = (inimigo.transform.position - transform.position).normalized;
-            float anguloEntre = Vector2.Angle(direcaoAtaque, direcaoParaInimigo);
-
-            if (anguloEntre <= settings.anguloAtaque / 2f)
-            {
-                Enemy enemy = inimigo.GetComponent<Enemy>();
-                enemy.ApplyDamage(settings.dano);
-            }
-        }
-    }
+    
     public void ApplyDamage(float dmg)
     {
         currentHeath -= dmg;
@@ -114,13 +84,9 @@ public class PlayerController : MonoBehaviour
             isDead = true;
             Debug.Log("morres-te, get better!!!");
         }
+        OnHealthChange?.Invoke(currentHeath, settings.maxHealth);
     }
 
     public Vector3 GetMousePosition() => playerCamera.ScreenToWorldPoint(Input.mousePosition);
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, settings.raioAtaque);
-    }
+    
 }
