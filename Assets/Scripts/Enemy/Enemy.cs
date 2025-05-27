@@ -105,6 +105,11 @@ public class Enemy : MonoBehaviour
     private void DropItems()
     {
         if (settings.dropCount <= 0 || settings.dropType.IsNullOrEmpty()) return;
+        if (Random.Range(0, settings.dropChance) != 0)
+        {
+            Debug.Log("[Enemy] Couldnt drop items (No chance) ");
+            return;
+        }
 
         GameObject[] prefabs = PrefabManager.Instance.GetRandomPrefabs(settings.dropType, settings.dropCount);
 
@@ -116,6 +121,12 @@ public class Enemy : MonoBehaviour
 
         foreach (GameObject prefab in prefabs)
         {
+            if (prefab == null)
+            {
+                Debug.Log("[Enemy] Couldnt drop items (Prefab is null).");
+                continue;
+            }
+
             GameObject currentDrop = Instantiate(prefab);
             Vector2 position = new Vector2(
                 Random.Range(-settings.dropRange, settings.dropRange),

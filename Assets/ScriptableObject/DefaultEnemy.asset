@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   walkSpeed: 3
+  canMove: 1
   baseDamage: 25
   attackCooldown: 1.5
   attackDistance: 1.75
   detectionDistance: 7.5
+  dropChance: 4
+  dropRange: 2.25
+  dropType: sword_pickups
+  dropCount: 1

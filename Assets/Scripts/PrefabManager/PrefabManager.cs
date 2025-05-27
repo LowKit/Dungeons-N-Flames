@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class PrefabManager : MonoBehaviour
 {
-    public static PrefabManager Instance { get; private set;}
+    public static PrefabManager Instance { get; private set; }
     [SerializeField] private List<PrefabList> prefabLists = new List<PrefabList>();
 
     private void Awake()
@@ -36,12 +35,23 @@ public class PrefabManager : MonoBehaviour
     public GameObject[] GetRandomPrefabs(string listType, int count)
     {
         List<PrefabReference> list = GetReferenceList(listType);
+
+        if (list == null)
+        {
+            Debug.LogError("[PrefabManager] Prefab list not found: " + listType);
+            return null;
+        }
+
         List<GameObject> prefabList = new();
 
         for (int i = 0; i < count; i++)
         {
             int randomIndex = Random.Range(0, list.Count);
-            prefabList.Add(list[randomIndex].prefab);
+
+            if (list[randomIndex] != null)
+            {
+                prefabList.Add(list[randomIndex].prefab);
+            }
         }
 
         return prefabList.ToArray();
@@ -49,7 +59,11 @@ public class PrefabManager : MonoBehaviour
 
     private List<PrefabReference> GetReferenceList(string listType)
     {
-        return prefabLists.FirstOrDefault(i => i.type == listType).references.prefabReferences;
+        var listEntry = prefabLists.FirstOrDefault(i => i.type == listType);
+        if (listEntry == null || listEntry.references == null || listEntry.references.prefabReferences == null)
+            return null;
+
+        return listEntry.references.prefabReferences;
     }
 }
 

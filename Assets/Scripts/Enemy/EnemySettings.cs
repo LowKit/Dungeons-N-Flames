@@ -19,6 +19,7 @@ public class EnemySettings : ScriptableObject
     public float detectionDistance = 7.5f;
 
     [Header("Drop Settings")]
+    public int dropChance = 4;
     public float dropRange = 2.25f;
     public string dropType;
     public int dropCount = 1;
