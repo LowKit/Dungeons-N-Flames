@@ -3,9 +3,9 @@ using System;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public static event Action<Interactable> OnInteractEvent;
-    public static event Action<Interactable,string> OnFocusEvent;
-    public static event Action<Interactable> OnLoseFocusEvent;
+    public static event Action OnInteractEvent;
+    public static event Action<string> OnFocusEvent;
+    public static event Action OnLoseFocusEvent;
 
     public virtual void Awake()
     {
@@ -18,14 +18,14 @@ public abstract class Interactable : MonoBehaviour
 
     protected void TriggerOnFocus(string info)
     {
-        OnFocusEvent?.Invoke(this, info);
+        OnFocusEvent?.Invoke(info);
     }
     protected void TriggerOnLoseFocus()
     {
-        OnLoseFocusEvent?.Invoke(this);
+        OnLoseFocusEvent?.Invoke();
     }
     protected void TriggerOnInteract()
     {
-        OnInteractEvent?.Invoke(this);
+        OnInteractEvent?.Invoke();
     }
 }
