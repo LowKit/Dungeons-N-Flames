@@ -15,14 +15,6 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public Transform currentParent;
 
-    private void Start()
-    {
-        InventoryManager.instance.OnSelectionChange += UpdateSelection;
-    }
-    private void OnDisable()
-    {
-        InventoryManager.instance.OnSelectionChange -= UpdateSelection;
-    }
     public void InitializeItem(Item newItem)
     {
         item = newItem;
@@ -37,18 +29,6 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
 
         if (countActive) nameText.text = $"{item.itemName} ({count})";
         else nameText.text = item.itemName;
-    }
-    private void UpdateSelection(Item selectedItem)
-    {
-        if (selectedItem == null || item == null)
-        {
-            Deselect();
-            return;
-        }
-
-        if (selectedItem.id == item.id) Select();
-            else Deselect();
- 
     }
     public void Select()
     {

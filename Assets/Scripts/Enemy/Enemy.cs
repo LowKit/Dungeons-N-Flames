@@ -1,3 +1,4 @@
+using SABI;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,12 +8,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemySettings settings;
     [SerializeField] private NavMeshAgent navMeshAgent;
 
-
     float currentHeath;
     Transform playerTransform;
     PlayerController playerController;
     float lastAttackTime;
     bool hasAttacked = false;
+    bool isDead = false;
     private void Start()
     {
         playerController = GameObject.FindFirstObjectByType<PlayerController>();
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour
     {
         if (DependenciesAreNull()) return;
 
-        MoveToPlayer();
+        if(settings.canMove) MoveToPlayer();
         AttackPlayer();
     }
 
@@ -47,6 +48,11 @@ public class Enemy : MonoBehaviour
     {
         float distance = DistanceToPlayer();
 
+        if (isDead)
+        {
+            navMeshAgent.isStopped = true;
+            return;
+        }
         if (distance <= settings.detectionDistance && distance > settings.attackDistance)
         {
             Vector3 position = new Vector3(playerTransform.position.x, playerTransform.position.y, 0);
@@ -57,7 +63,6 @@ public class Enemy : MonoBehaviour
         {
             navMeshAgent.isStopped = true;
         }
-
     }
 
     private void AttackPlayer()
@@ -87,9 +92,40 @@ public class Enemy : MonoBehaviour
         if (currentHeath <= 0)
         {
             currentHeath = 0;
-            Debug.Log("[Enemy] Enemy died.");
+            OnDeath();
         }
     }
+
+    private void OnDeath()
+    {
+        isDead = true;
+        DropItems();
+        Debug.Log("[Enemy] Enemy died.");
+    }
+    private void DropItems()
+    {
+        if (settings.dropCount <= 0 || settings.dropType.IsNullOrEmpty()) return;
+
+        GameObject[] prefabs = PrefabManager.Instance.GetRandomPrefabs(settings.dropType, settings.dropCount);
+
+        if (prefabs == null || prefabs.Length == 0)
+        {
+            Debug.LogWarning("[Enemy] Drop prefab list null or empty!");
+            return;
+        }
+
+        foreach (GameObject prefab in prefabs)
+        {
+            GameObject currentDrop = Instantiate(prefab);
+            Vector2 position = new Vector2(
+                Random.Range(-settings.dropRange, settings.dropRange),
+                Random.Range(-settings.dropRange, settings.dropRange)
+            );
+            currentDrop.transform.position = position;
+        }
+    }
+
+
 
     private bool DependenciesAreNull()
     {

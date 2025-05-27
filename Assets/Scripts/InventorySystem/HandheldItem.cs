@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HandItem : MonoBehaviour
+public class HandheldItem : MonoBehaviour
 {
     public Item item;
 }

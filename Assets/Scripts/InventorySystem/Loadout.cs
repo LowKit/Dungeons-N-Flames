@@ -4,7 +4,7 @@ using UnityEngine;
 public class Loadout : MonoBehaviour
 {
     [SerializeField] private Transform itemHolder;
-    List<HandItem> items = new List<HandItem>();
+    List<HandheldItem> items = new List<HandheldItem>();
     private void Start() 
     {
         InitializeItems();
@@ -19,7 +19,7 @@ public class Loadout : MonoBehaviour
     private void ChangeSelectedItem(Item item)
     {
         DisableItems();
-        HandItem handItem = GetItem(item);
+        HandheldItem handItem = GetItem(item);
 
         if(handItem == null) return;
 
@@ -29,18 +29,18 @@ public class Loadout : MonoBehaviour
     {
         foreach(Transform item in itemHolder)
         {
-            if(item.TryGetComponent<HandItem>(out HandItem handItem))
+            if(item.TryGetComponent(out HandheldItem handItem))
             {
                 items.Add(handItem);
             }
         }
     }
 
-    private HandItem GetItem(Item item)
+    private HandheldItem GetItem(Item item)
     {
         if(item == null) return null;
 
-        foreach(HandItem handItem in items)
+        foreach(HandheldItem handItem in items)
         {
             if(handItem.item.id == item.id) return handItem;
         }
