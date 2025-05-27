@@ -2,7 +2,7 @@ using SABI;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Dependencies")]
     [SerializeField] private EnemySettings settings;
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (DependenciesAreNull()) return;
+        if (DependenciesAreNull() || isDead) return;
 
         if(settings.canMove) MoveToPlayer();
         AttackPlayer();
@@ -85,7 +85,6 @@ public class Enemy : MonoBehaviour
             hasAttacked = false;
         }
     }
-
     public void ApplyDamage(float damage)
     {
         currentHeath -= damage;
@@ -135,8 +134,6 @@ public class Enemy : MonoBehaviour
             currentDrop.transform.position = position;
         }
     }
-
-
 
     private bool DependenciesAreNull()
     {

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -19,6 +20,8 @@ public class InventoryManager : MonoBehaviour
     public int selectedSlot = -1;
 
     public event Action<Item> OnSelectionChange;
+    public event Action<Item> OnItemAdded;
+    public event Action<Item> OnItemRemoved;
     private void Awake()
     {
         instance = this;
@@ -51,6 +54,7 @@ public class InventoryManager : MonoBehaviour
             {
                 itemInSlot.count += amount;
                 itemInSlot.RefreshCount();
+                OnItemAdded?.Invoke(item);
                 return true;
             }
         }
@@ -69,8 +73,9 @@ public class InventoryManager : MonoBehaviour
 
         inventoryItem.count = count;
         inventoryItem.InitializeItem(item);
-
+  
         inventorySlots.Add(inventoryItem);
+        OnItemAdded?.Invoke(inventoryItem.item);
     }
 
     public void ChangeSelectedSlot(int newValue)
@@ -129,10 +134,25 @@ public class InventoryManager : MonoBehaviour
         {
             inventorySlots.Remove(selectedItem);
             Destroy(selectedItem.gameObject);
-            OnSelectionChange?.Invoke(null);
+            OnItemRemoved?.Invoke(item.item);
+        }
+    }
+    public void DestroyItem(Item item)
+    {
+        for (int i = 0; i < inventorySlots.Count; i++)
+        {
+            if (inventorySlots[i].item.id == item.id)
+            {
+                InventoryItem toRemove = inventorySlots[i];
+                inventorySlots.RemoveAt(i);
+                Destroy(toRemove.gameObject);
+                OnItemRemoved?.Invoke(toRemove.item);
+                return;
+            }
         }
     }
 
+    /*
     public void DropItem(Item item)
     {
         InventoryItem selectedItem = inventorySlots[selectedSlot];
@@ -145,14 +165,14 @@ public class InventoryManager : MonoBehaviour
         GameObject itemPrefab = GetItemPrefab(item.id);
         if (itemPrefab != null)
         {
-            /*
+            
             Transform orientation = PlayerController.instance.orientation;
             Vector3 direction = orientation.forward;
             float distance = GetItemSpawnDistance(orientation.position, direction,maxDropDistance);
             
             Vector3 dropPosition = orientation.position + direction * distance;
             Instantiate(itemPrefab,dropPosition,Quaternion.identity);
-            */
+            
         }
 
         // Update inventory and notify hand inventory
@@ -160,6 +180,8 @@ public class InventoryManager : MonoBehaviour
         Destroy(selectedItem.gameObject);
         OnSelectionChange?.Invoke(null);
     }
+    */
+
 
     private float GetItemSpawnDistance(Vector3 position, Vector3 direction, float maxDistance)
     {
@@ -176,17 +198,5 @@ public class InventoryManager : MonoBehaviour
         return itemInSlot != null ? itemInSlot.item : null;
     }
 
-    public GameObject GetItemPrefab(string itemId)
-    {
-        foreach (GameObject gm in itemPrefabs)
-        {
-            if (gm.TryGetComponent<ItemPickup>(out ItemPickup itemPickup))
-            {
-                if (itemPickup.item.id == itemId) return gm;
-            }
-        }
 
-        Debug.LogWarning("[InventoryManager] No item prefab was Found!");
-        return null;
-    }
 }

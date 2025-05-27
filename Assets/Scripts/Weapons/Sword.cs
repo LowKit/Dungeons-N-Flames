@@ -8,15 +8,9 @@ public class Sword : HandheldItem
     [SerializeField] private GameObject efeitoAtaquePrefab;
     [SerializeField] private WeaponSettings settings;
     [SerializeField] private ParticleSystem particlSystem;
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        
         // Ataque
         if (Input.GetMouseButtonDown(0))
         {
@@ -25,7 +19,6 @@ public class Sword : HandheldItem
     }
     void Atacar()
     {
-
         Vector3 mousePos = PlayerController.instance.GetMousePosition();
         Vector2 direcaoAtaque = (mousePos - transform.position).normalized;
         particlSystem.Play();
@@ -48,8 +41,8 @@ public class Sword : HandheldItem
             if (anguloEntre <= settings.anguloAtaque / 2f)
             {
                 Debug.Log("acertei ele!");
-                Enemy enemy = inimigo.GetComponent<Enemy>();
-                enemy.ApplyDamage(settings.dano);
+                IDamageable entity = inimigo.GetComponent<IDamageable>();
+                entity.ApplyDamage(settings.dano);
             }
             else{
                 Debug.Log("errei!");

@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06f9d6ef5665d484982dbd6905130695, type: 3}
-  m_Name: Swords
+  m_Name: Handheld
   m_EditorClassIdentifier: 
   prefabReferences:
-  - referenceKey: dgfhdgh
-    prefab: {fileID: 0}
+  - referenceKey: health_potion
+    prefab: {fileID: 8712776949912690500, guid: a2de24dccd0a59343b6390c932bc3fdd, type: 3}
+  - referenceKey: big_sword
+    prefab: {fileID: 418646327044980324, guid: 411f6f8e6b276c44da9ff137f3b0db59, type: 3}
