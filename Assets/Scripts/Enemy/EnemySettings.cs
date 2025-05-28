@@ -11,6 +11,7 @@ public class EnemySettings : ScriptableObject
     public bool canMove = true;
 
     [Header("Attack Settings")]
+    public bool canAttack = true;
     public float baseDamage = 25;
     public float attackCooldown = 0.5f;
     public float attackDistance = 3;

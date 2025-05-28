@@ -24,6 +24,9 @@ public class Loadout : MonoBehaviour
     private void ChangeSelectedItem(Item item)
     {
         DisableItems();
+
+        if (item == null) return;
+
         HandheldItem handItem = GetItem(item);
 
         if (handItem == null)
@@ -67,12 +70,11 @@ public class Loadout : MonoBehaviour
         }
 
         GameObject instance = Instantiate(prefab, itemHolder);
+        instance.SetActive(false);
         InitializeItem(instance, item);
     }
     private void DestroyItem(Item item)
     {
-        Debug.Log(item);
-
         if (item == null)
         {
             Debug.Log("[Loadout] Item is null, cant remove item.");
@@ -86,15 +88,17 @@ public class Loadout : MonoBehaviour
             Debug.Log("[Loadout] Failed to remove, HandheldItem is null!");
             return;
         }
-        Debug.Log(items.Count);
         items.Remove(handheldItem);
-        Debug.Log(items.Count);
         Destroy(handheldItem.gameObject);
     }
 
     private HandheldItem GetItem(Item item)
     {
-        if (item == null) return null;
+        if (item == null)
+        {
+            Debug.LogWarning("[Loadout] Couldnt find item in list. (Item is null)");
+            return null;
+        }
 
         foreach (HandheldItem handItem in items)
         {

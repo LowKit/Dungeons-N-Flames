@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (DependenciesAreNull() || isDead) return;
 
         if(settings.canMove) MoveToPlayer();
-        AttackPlayer();
+        if(settings.canAttack) AttackPlayer();
     }
 
     private void MoveToPlayer()
@@ -93,6 +93,12 @@ public class Enemy : MonoBehaviour, IDamageable
             currentHeath = 0;
             OnDeath();
         }
+    }
+
+    public void UpdateHealth(float health)
+    {
+        currentHeath = health;
+        if (currentHeath <= 0) OnDeath();
     }
 
     private void OnDeath()

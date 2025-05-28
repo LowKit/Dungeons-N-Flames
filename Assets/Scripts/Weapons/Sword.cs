@@ -40,7 +40,7 @@ public class Sword : HandheldItem
 
             if (anguloEntre <= settings.anguloAtaque / 2f)
             {
-                Debug.Log("acertei ele!");
+                Debug.Log("Hit: " + inimigo.name);
                 IDamageable entity = inimigo.GetComponent<IDamageable>();
                 entity.ApplyDamage(settings.dano);
             }
