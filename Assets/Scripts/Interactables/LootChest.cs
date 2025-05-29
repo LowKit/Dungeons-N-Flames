@@ -17,6 +17,7 @@ public class LootChest : Interactable, IDamageable
     [SerializeField] private float dropRange = 1.5f;
 
     int health;
+    bool wasOpened = false;
 
     private void Start()
     {
@@ -26,10 +27,12 @@ public class LootChest : Interactable, IDamageable
     public void ApplyDamage(float damage)
     {
         health = Mathf.Max(health-1, 0);
-        if(health <= 0)
+        if (health <= 0 && !wasOpened)
         {
+            wasOpened = true;
             DropItems();
             ChangeSprite(openedSprite);
+            Destroy(gameObject, 3);
         }
     }
 

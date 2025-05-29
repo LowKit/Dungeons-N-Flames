@@ -1,0 +1,463 @@
+fileFormatVersion: 2
+guid: 51254074d30055640a9a424e7a0d021a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9156703053449703701
+    second: Slime3_Walk_full_0
+  - first:
+      213: -6015253151442431149
+    second: Slime3_Walk_full_1
+  - first:
+      213: 6797803624201677096
+    second: Slime3_Walk_full_2
+  - first:
+      213: -1080120494225793199
+    second: Slime3_Walk_full_3
+  - first:
+      213: 5852548609355258259
+    second: Slime3_Walk_full_4
+  - first:
+      213: -5261107993188655626
+    second: Slime3_Walk_full_5
+  - first:
+      213: -4323051625923466004
+    second: Slime3_Walk_full_6
+  - first:
+      213: 7135859100186429168
+    second: Slime3_Walk_full_7
+  - first:
+      213: -4051811738481366243
+    second: Slime3_Walk_full_8
+  - first:
+      213: -6742905848876319515
+    second: Slime3_Walk_full_9
+  - first:
+      213: -4967153963466138967
+    second: Slime3_Walk_full_10
+  - first:
+      213: -1503179306798822727
+    second: Slime3_Walk_full_11
+  - first:
+      213: 5902964125296524535
+    second: Slime3_Walk_full_12
+  - first:
+      213: 6532094321285788152
+    second: Slime3_Walk_full_13
+  - first:
+      213: -1637338213612297889
+    second: Slime3_Walk_full_14
+  - first:
+      213: 7421786773436531200
+    second: Slime3_Walk_full_15
+  - first:
+      213: -7933892210952035568
+    second: Slime3_Walk_full_16
+  - first:
+      213: -4612403092579569218
+    second: Slime3_Walk_full_17
+  - first:
+      213: -2768387810253533023
+    second: Slime3_Walk_full_18
+  - first:
+      213: 5083491172355964560
+    second: Slime3_Walk_full_19
+  - first:
+      213: 5373351011805372059
+    second: Slime3_Walk_full_20
+  - first:
+      213: -3543582665821802280
+    second: Slime3_Walk_full_21
+  - first:
+      213: -5938556912042284873
+    second: Slime3_Walk_full_22
+  - first:
+      213: -5947774891804358634
+    second: Slime3_Walk_full_23
+  - first:
+      213: 5055606897570597289
+    second: Slime3_Walk_full_24
+  - first:
+      213: 5388263978773947952
+    second: Slime3_Walk_full_25
+  - first:
+      213: -722003542061163305
+    second: Slime3_Walk_full_26
+  - first:
+      213: -5407387296793893962
+    second: Slime3_Walk_full_27
+  - first:
+      213: 470102544542096853
+    second: Slime3_Walk_full_28
+  - first:
+      213: 3021055973923374267
+    second: Slime3_Walk_full_29
+  - first:
+      213: 8382853171058751193
+    second: Slime3_Walk_full_30
+  - first:
+      213: -1025131065985063736
+    second: Slime3_Walk_full_31
+  - first:
+      213: 8436298257926337678
+    second: Slime3_Walk_full_32
+  - first:
+      213: -5143060728556050091
+    second: Slime3_Walk_full_33
+  - first:
+      213: 4882863623749447202
+    second: Slime3_Walk_full_34
+  - first:
+      213: -7444067849751601150
+    second: Slime3_Walk_full_35
+  - first:
+      213: -5501214731922987266
+    second: Slime3_Walk_full_36
+  - first:
+      213: 687796032616517220
+    second: Slime3_Walk_full_37
+  - first:
+      213: 5240317656270384945
+    second: Slime3_Walk_full_38
+  - first:
+      213: 8004373656248300881
+    second: Slime3_Walk_full_39
+  - first:
+      213: -1689856291756048888
+    second: Slime3_Walk_full_40
+  - first:
+      213: 4453744490025508586
+    second: Slime3_Walk_full_41
+  - first:
+      213: -4570720807549371541
+    second: Slime3_Walk_full_42
+  - first:
+      213: 7735605838728050997
+    second: Slime3_Walk_full_43
+  - first:
+      213: 7602018239728934483
+    second: Slime3_Walk_full_44
+  - first:
+      213: 4731806620170286953
+    second: Slime3_Walk_full_45
+  - first:
+      213: -3298501941032371892
+    second: Slime3_Walk_full_46
+  - first:
+      213: -6572999550106988330
+    second: Slime3_Walk_full_47
+  - first:
+      213: -7702482386382801807
+    second: Slime3_Walk_full_48
+  - first:
+      213: 7934865107914055966
+    second: Slime3_Walk_full_49
+  - first:
+      213: 8112132764941611330
+    second: Slime3_Walk_full_50
+  - first:
+      213: 7472652175788050835
+    second: Slime3_Walk_full_51
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Slime3_Walk_full_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 211
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 511ba9ea9e4231f70800000000000000
+      internalID: 9156703053449703701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 211
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82967614166a65e50800000000000000
+      internalID: 6797803624201677096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 211
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f5d0b1224a201f0800000000000000
+      internalID: -1080120494225793199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_4
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 211
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399935bb3fd683150800000000000000
+      internalID: 5852548609355258259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_8
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 207
+        width: 28
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b6f07f0b215c7c0800000000000000
+      internalID: -4051811738481366243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_9
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 207
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ecb2db1bd26c62a0800000000000000
+      internalID: -6742905848876319515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_10
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 207
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa5dee89cf111bb0800000000000000
+      internalID: -4967153963466138967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime3_Walk_full_11
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 207
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bac9887262a32be0800000000000000
+      internalID: -1503179306798822727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 199a8ba386f94e9428941c1aada05a92
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Slime3_Walk_full_1: 2087501078
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
