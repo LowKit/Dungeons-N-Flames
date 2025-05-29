@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void Update()
     {
+        if (Time.timeScale == 0f) return; // Se o jogo estiver pausado, sai do update
+
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mousePos - transform.position).normalized;
 
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void FixedUpdate()
     {
+        if (Time.timeScale == 0f) return; // Evita movimento durante pausa
         if (!estaADashar)
         {
             rb.linearVelocity = input * settings.velocidade;

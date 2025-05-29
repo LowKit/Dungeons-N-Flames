@@ -23,6 +23,8 @@ public class UiUpdate : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (mouseInfoText.gameObject.activeSelf)
         {
             mouseInfoText.transform.position = Input.mousePosition;
@@ -53,15 +55,17 @@ public class UiUpdate : MonoBehaviour
 
     private void MouseFocus(string info)
     {
+        if (Time.timeScale == 0f) return; // Bloqueia a exibição se estiver pausado
+
         mouseInfoText.gameObject.SetActive(true);
         InfoText.text = info;
-
-        Vector2 mousePos = Input.mousePosition;
-        mouseInfoText.transform.position = mousePos;
+        mouseInfoText.transform.position = Input.mousePosition;
     }
 
     private void MouseNoFocus()
     {
+        if (Time.timeScale == 0f) return; // Impede desativar/ativar durante pausa
+
         mouseInfoText.gameObject.SetActive(false);
     }
 
@@ -82,4 +86,10 @@ public class UiUpdate : MonoBehaviour
 
         interactMessageText.gameObject.SetActive(false);
     }
+    public void OcultarInteracao()
+    {
+        mouseInfoText.gameObject.SetActive(false);
+    }
+
+
 }
