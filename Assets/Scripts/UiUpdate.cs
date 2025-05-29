@@ -1,19 +1,26 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class UiUpdate : MonoBehaviour
 {
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Image mouseInfoText;
     [SerializeField] private TextMeshProUGUI InfoText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("Interact Message Settings")]
+    [SerializeField] private TextMeshProUGUI interactMessageText;
+    [SerializeField] private float interactMessageDuration = 2f; // Duration to show interaction message
+
     void Start()
     {
-
+        if (interactMessageText != null)
+        {
+            interactMessageText.gameObject.SetActive(false);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (mouseInfoText.gameObject.activeSelf)
@@ -21,11 +28,13 @@ public class UiUpdate : MonoBehaviour
             mouseInfoText.transform.position = Input.mousePosition;
         }
     }
+
     private void OnEnable()
     {
         PlayerController.OnHealthChange += HealthChage;
         Interactable.OnFocusEvent += MouseFocus;
         Interactable.OnLoseFocusEvent += MouseNoFocus;
+        Interactable.OnInteractEvent += ShowInteractMessage;
     }
 
     private void OnDisable()
@@ -33,6 +42,7 @@ public class UiUpdate : MonoBehaviour
         PlayerController.OnHealthChange -= HealthChage;
         Interactable.OnFocusEvent -= MouseFocus;
         Interactable.OnLoseFocusEvent -= MouseNoFocus;
+        Interactable.OnInteractEvent -= ShowInteractMessage;
     }
 
     private void HealthChage(float currenthp, float maxhp)
@@ -40,6 +50,7 @@ public class UiUpdate : MonoBehaviour
         float fill = currenthp / maxhp;
         healthBarFill.fillAmount = fill;
     }
+
     private void MouseFocus(string info)
     {
         mouseInfoText.gameObject.SetActive(true);
@@ -52,5 +63,23 @@ public class UiUpdate : MonoBehaviour
     private void MouseNoFocus()
     {
         mouseInfoText.gameObject.SetActive(false);
+    }
+
+    private void ShowInteractMessage(string message)
+    {
+        StartCoroutine(ShowMessageCoroutine(message));
+    }
+
+    private IEnumerator ShowMessageCoroutine(string message)
+    {
+        if (interactMessageText == null)
+            yield break;
+
+        interactMessageText.text = message;
+        interactMessageText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(interactMessageDuration);
+
+        interactMessageText.gameObject.SetActive(false);
     }
 }

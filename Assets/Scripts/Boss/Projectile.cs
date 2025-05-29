@@ -3,59 +3,78 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float lifeTime = 3f;
-    public float speed = 1f;
-    public float damage = 1;
-    [HideInInspector] public Vector3 direction;
+    private float speed = 1f;
+    private float damage = 1;
+    private int ownerID;
+    private Vector3 direction;
 
     [SerializeField] private Transform spriteTransform;
     [SerializeField] private Animator animator;
     [SerializeField] private LayerMask hitLayer;
-    [SerializeField] private float raycastDistance = 0.55f;
-
-    public Collider2D collider2d;
+    [SerializeField] private float overlapRadius = 0.55f;
 
     float timer;
     bool canMove = true;
+    bool canDamage = true;
 
     private void Start()
     {
         timer = lifeTime;
     }
 
+    public void Initialize(int _owner, Vector3 _direction, float _speed, float _damage, float _attackSize, float _spriteAngle)
+    {
+        ownerID = _owner;
+        direction = _direction;
+        speed = _speed;
+        damage = _damage;
+
+        RotateSprite(_spriteAngle);
+        SetAttackSize(_attackSize);
+    }
+
     private void Update()
     {
-       if(canMove) transform.Translate(direction * speed * Time.deltaTime);
-       CheckForDamageable();
+        if (canMove && canDamage)
+        {
+            transform.Translate(direction * speed * Time.deltaTime);
+            CheckForDamageable();
+        }
+
         timer -= Time.deltaTime;
         if (timer <= 0) DestroyProjectile();
     }
 
     private void CheckForDamageable()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, raycastDistance, hitLayer);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, overlapRadius / 2, hitLayer);
 
-        if(hit.collider != null && hit.collider.TryGetComponent(out IDamageable damageable))
+        foreach (Collider2D collider in colliders)
         {
-            damageable.ApplyDamage(damage);
-            DestroyProjectile();
-        }
+            if (collider.gameObject.GetInstanceID() == ownerID) continue;
 
+            if (collider.TryGetComponent(out IDamageable entity))
+            {
+                entity.ApplyDamage(damage);
+                DestroyProjectile();
+            }
+        }
     }
 
-    public void RotateSprite(float angle)
+    private void RotateSprite(float angle)
     {
-        spriteTransform.localRotation = Quaternion.Euler(0,0,angle);
+        spriteTransform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     public void DestroyProjectile()
     {
-        collider2d.enabled = false;
         canMove = false;
+        canDamage = false;
         animator.SetTrigger("Explosion");
-        Destroy(gameObject,0.8f);
+        Destroy(gameObject, 0.8f);
     }
 
-    public void SetAttackSize(float size)
+    private void SetAttackSize(float size)
     {
         transform.localScale = Vector3.one * size;
     }

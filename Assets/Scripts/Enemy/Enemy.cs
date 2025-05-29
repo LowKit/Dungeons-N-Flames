@@ -1,11 +1,13 @@
+using System;
 using SABI;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Dependencies")]
-    [SerializeField] private EnemySettings settings;
+    [SerializeField] protected EnemySettings settings;
     [SerializeField] private NavMeshAgent navMeshAgent;
 
     float currentHeath;
@@ -13,7 +15,9 @@ public class Enemy : MonoBehaviour, IDamageable
     PlayerController playerController;
     float lastAttackTime;
     bool hasAttacked = false;
-    bool isDead = false;
+    public bool isDead = false;
+
+    public event Action OnDeath;
     private void Start()
     {
         playerController = GameObject.FindFirstObjectByType<PlayerController>();
@@ -91,7 +95,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (currentHeath <= 0)
         {
             currentHeath = 0;
-            OnDeath();
+            OnEnemyDeath();
         }
     }
 
@@ -101,10 +105,13 @@ public class Enemy : MonoBehaviour, IDamageable
         if (currentHeath <= 0) OnDeath();
     }
 
-    private void OnDeath()
+    private void OnEnemyDeath()
     {
-        isDead = true;
+        if (isDead) return;
+
+        isDead = true; 
         DropItems();
+        OnDeath?.Invoke();
         Debug.Log("[Enemy] Enemy died.");
     }
     private void DropItems()

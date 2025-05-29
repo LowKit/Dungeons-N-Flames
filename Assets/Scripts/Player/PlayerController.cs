@@ -59,6 +59,19 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    public void WarpTo(Vector3 position)
+    {
+        // Disable physics for a moment to avoid conflicts
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        // Set new position
+        transform.position = position;
+
+        // Optional: add some visual effect or sound to indicate warp
+        Debug.Log("Player warped to: " + position);
+    }
+
     System.Collections.IEnumerator FazerDash()
     {
         podeDash = false;
@@ -74,7 +87,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         podeDash = true;
     }
 
-    
+
     public void ApplyDamage(float dmg)
     {
         currentHeath -= dmg;
@@ -88,5 +101,5 @@ public class PlayerController : MonoBehaviour, IDamageable
     }
 
     public Vector3 GetMousePosition() => playerCamera.ScreenToWorldPoint(Input.mousePosition);
-    
+
 }

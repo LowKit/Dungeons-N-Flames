@@ -41,6 +41,11 @@ public class PrefabManager : MonoBehaviour
             Debug.LogError("[PrefabManager] Prefab list not found: " + listType);
             return null;
         }
+        else if (list.Count < 1)
+        {
+            Debug.LogWarning("[PrefabManager] Prefab list with 0 prefabs: " + listType);
+            return null;
+        }
 
         List<GameObject> prefabList = new();
 
