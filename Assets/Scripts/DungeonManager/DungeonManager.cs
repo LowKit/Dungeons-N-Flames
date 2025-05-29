@@ -9,11 +9,15 @@ public class DungeonManager : MonoBehaviour
     [SerializeField] private List<DungeonRoom> rooms = new List<DungeonRoom>();
     [SerializeField] private DungeonRoom defaultRoom;
 
-    List<float> probabilities = new List<float>();
+    [Header("Difficulty Settings")]
+    [SerializeField] private float difficultyMultiplierIncrement = 0.05f;
 
+    List<float> probabilities = new List<float>();
 
     PlayerController playerController;
     DungeonRoom currentRoom;
+
+    public float difficultyMultipler = 1;
     private void Awake()
     {
         instance = this;
@@ -28,6 +32,8 @@ public class DungeonManager : MonoBehaviour
     private void EnterRoom(DungeonRoom room)
     {
         playerController.WarpTo(room.GetPlayerSpawnPosition());
+
+        difficultyMultipler += difficultyMultipler;
 
         currentRoom = room;
         currentRoom.InitializeRoom();

@@ -6,13 +6,13 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
-
     List<InventoryItem> inventorySlots = new List<InventoryItem>();
     [SerializeField] private List<GameObject> itemPrefabs = new List<GameObject>();
     [SerializeField] private Transform itemHolder;
     [SerializeField] private InventoryItem inventoryItemPrefab;
     [SerializeField] private int maxSlots;
-    [SerializeField] private LayerMask distanceCheckLayerMask;
+
+    [SerializeField] private bool allowDuplicates = false;
     public float maxDropDistance = 1.5f;
 
     public Item testItem;
@@ -50,22 +50,36 @@ public class InventoryManager : MonoBehaviour
         {
             InventoryItem itemInSlot = inventorySlots[i];
 
-            if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < item.maxStackSize)
+            if (itemInSlot != null && itemInSlot.item == item)
             {
-                itemInSlot.count += amount;
-                itemInSlot.RefreshCount();
-                OnItemAdded?.Invoke(item);
-                return true;
+                // Duplicate item detected
+                if (!allowDuplicates)
+                {
+                    // Still fire event so items like Sword can respond
+                    OnItemAdded?.Invoke(item);
+                    Debug.Log("[Inventory] Duplicate item attempted. Event triggered.");
+                    return false;
+                }
+
+                // If stackable and has room, increase count
+                if (itemInSlot.count < item.maxStackSize)
+                {
+                    itemInSlot.count += amount;
+                    itemInSlot.RefreshCount();
+                    OnItemAdded?.Invoke(item);
+                    return true;
+                }
             }
         }
+
+        // Add to new slot if space is available
         if (inventorySlots.Count < maxSlots)
         {
             SpawnItem(item, amount);
             return true;
         }
 
-        Debug.Log("[Inventory] Couldnt add item to Inventory (No Slots available.");
-
+        Debug.Log("[Inventory] Couldn't add item — no available slots.");
         return false;
     }
 
@@ -75,7 +89,7 @@ public class InventoryManager : MonoBehaviour
 
         inventoryItem.count = count;
         inventoryItem.InitializeItem(item);
-  
+
         inventorySlots.Add(inventoryItem);
         OnItemAdded?.Invoke(inventoryItem.item);
 
@@ -172,44 +186,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-
-    /*
-    public void DropItem(Item item)
-    {
-        InventoryItem selectedItem = inventorySlots[selectedSlot];
-        if (selectedItem.item.id != item.id)
-        {
-            Debug.Log("[InventoryManager] Incorrect Item! (Not Equipped)");
-            return;
-        }
-
-        GameObject itemPrefab = GetItemPrefab(item.id);
-        if (itemPrefab != null)
-        {
-            
-            Transform orientation = PlayerController.instance.orientation;
-            Vector3 direction = orientation.forward;
-            float distance = GetItemSpawnDistance(orientation.position, direction,maxDropDistance);
-            
-            Vector3 dropPosition = orientation.position + direction * distance;
-            Instantiate(itemPrefab,dropPosition,Quaternion.identity);
-            
-        }
-
-        // Update inventory and notify hand inventory
-        inventorySlots.Remove(selectedItem);
-        Destroy(selectedItem.gameObject);
-        OnSelectionChange?.Invoke(null);
-    }
-    */
-
-
-    private float GetItemSpawnDistance(Vector3 position, Vector3 direction, float maxDistance)
-    {
-        bool foundHit = Physics.Raycast(position, direction, out RaycastHit hit, maxDistance, distanceCheckLayerMask);
-        return foundHit ? hit.distance / 2 : maxDistance;
-    }
-
     public Item GetSelectedItem()
     {
         if (selectedSlot < 0 || selectedSlot >= inventorySlots.Count)

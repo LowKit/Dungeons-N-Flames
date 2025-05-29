@@ -57,6 +57,7 @@ public class Projectile : MonoBehaviour
 
             if (collider.TryGetComponent(out IDamageable entity))
             {
+                Debug.Log(collider.name);
                 entity.ApplyDamage(damage);
                 DestroyProjectile();
             }

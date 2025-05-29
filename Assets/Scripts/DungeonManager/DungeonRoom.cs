@@ -83,6 +83,7 @@ public class DungeonRoom : MonoBehaviour
 
         if (enemy != null)
         {
+            enemy.UpdateSettings(DungeonManager.instance.difficultyMultipler);
             currentEnemies.Add(enemy);
             enemy.OnDeath += HandleEnemyDeath;
         }

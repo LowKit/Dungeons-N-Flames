@@ -9,6 +9,25 @@ public class Sword : HandheldItem
     [SerializeField] private WeaponSettings settings;
     [SerializeField] private ParticleSystem particlSystem;
 
+    float multiplier = 1f;
+
+    private void OnEnable()
+    {
+        InventoryManager.instance.OnItemAdded += OnItemAdded;
+    }
+    private void OnDisable()
+    {
+        InventoryManager.instance.OnItemAdded -= OnItemAdded;
+    }
+
+    private void OnItemAdded(Item item)
+    {
+        if (item != null && item.id == base.item.id)
+        {
+            IncrementDamageMultiplier(0.1f);
+        }
+    }
+
     void Update()
     {
         // Ataque
@@ -42,9 +61,15 @@ public class Sword : HandheldItem
             {
                 if (collider.TryGetComponent(out IDamageable entity))
                 {
-                    entity.ApplyDamage(settings.dano);
+                    entity.ApplyDamage(settings.dano * multiplier);
                 }
             }
         }
+    }
+
+    public void IncrementDamageMultiplier(float increment)
+    {
+        multiplier += increment;
+        Debug.Log("Multiplier increased! : " + multiplier);
     }
 }

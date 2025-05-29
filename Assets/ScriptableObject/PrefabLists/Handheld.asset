@@ -17,3 +17,7 @@ MonoBehaviour:
     prefab: {fileID: 8712776949912690500, guid: a2de24dccd0a59343b6390c932bc3fdd, type: 3}
   - referenceKey: big_sword
     prefab: {fileID: 418646327044980324, guid: 411f6f8e6b276c44da9ff137f3b0db59, type: 3}
+  - referenceKey: nuke
+    prefab: {fileID: 8561444738209957309, guid: e2447932e9953b043849f1d6af64de55, type: 3}
+  - referenceKey: bow
+    prefab: {fileID: 7569226709900992957, guid: af859745904fdaa41aefe430cf5c16d1, type: 3}

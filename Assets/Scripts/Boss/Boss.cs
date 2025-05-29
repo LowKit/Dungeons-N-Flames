@@ -45,9 +45,6 @@ public class Boss : Enemy, IDamageable
         target = FindAnyObjectByType<PlayerController>().transform;
         id = gameObject.GetInstanceID();
 
-        mainLight.intensity = maxIntensityFlicker;
-        mainLight.pointLightOuterRadius = maxOuterFlicker;
-
         switch (fightStage)
         {
             case 0:
