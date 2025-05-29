@@ -22,6 +22,17 @@ public class Boss : Enemy, IDamageable
     [Header("Boss Settings")]
     [SerializeField] private BossStage[] stages = new BossStage[0];
 
+    [Header("Sudden Death Settings")]
+    [SerializeField] private float maxIntensity;
+    [SerializeField] private float minIntensity;
+    [SerializeField] private float maxOuterRadius;
+    [SerializeField] private float minOuterRadius;
+    [SerializeField] private float flickerDuration = 0.2f;
+
+    [Header("Light Settings")]
+    [SerializeField] private float maxIntensityFlicker;
+    [SerializeField] private float maxOuterFlicker;
+
     public static int fightStage = 0;
     Action[] attackPatterns = new Action[0];
     BossStage currentStage;
@@ -33,6 +44,9 @@ public class Boss : Enemy, IDamageable
     {
         target = FindAnyObjectByType<PlayerController>().transform;
         id = gameObject.GetInstanceID();
+
+        mainLight.intensity = maxIntensityFlicker;
+        mainLight.pointLightOuterRadius = maxOuterFlicker;
 
         switch (fightStage)
         {
@@ -47,6 +61,7 @@ public class Boss : Enemy, IDamageable
             case 2:
                 attackPatterns = new Action[] { SimpleAttack, TripleAttack, RingAttack, ConvergingAttack };
                 currentStage = stages[2];
+                EnterSuddenDeath();
                 break;
         }
 
@@ -150,6 +165,31 @@ public class Boss : Enemy, IDamageable
         Debug.Log($"[Boss] Stage {currentStage} Boss defeated.");
         CancelInvoke();
         fightStage++;
+    }
+
+    private void EnterSuddenDeath()
+    {
+        animator.SetTrigger("Transform");
+        InvokeRepeating(nameof(DoCandleEffect), flickerDuration,flickerDuration);
+    }
+
+    private void DoCandleEffect()
+    {
+        float randomIntensity = UnityEngine.Random.Range(minIntensity, maxIntensity);
+        float randomOuterRadius = UnityEngine.Random.Range(minOuterRadius, maxOuterRadius);
+
+        DOTween.To(() => mainLight.intensity, x => mainLight.intensity = x, randomIntensity, flickerDuration)
+               .OnKill(() => mainLight.intensity = randomIntensity);
+
+        DOTween.To(() => mainLight.pointLightOuterRadius, x => mainLight.pointLightOuterRadius = x, randomOuterRadius, flickerDuration)
+               .OnKill(() => mainLight.pointLightOuterRadius = randomOuterRadius);
+    }
+
+    private void DamageSequence()
+    {
+        Sequence lightSequence = DOTween.Sequence();
+        lightSequence.Append(DOTween.To(() => mainLight.intensity, x => mainLight.intensity = x, 0.2f, 0.7f))
+                     .Append(DOTween.To(() => mainLight.intensity, x => mainLight.intensity = x, maxIntensityFlicker, 0.2f));
     }
 }
 [System.Serializable]
