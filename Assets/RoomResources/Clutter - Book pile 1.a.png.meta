@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 4168e943db8b4aa41a4cfe98c79785e3
+guid: 5baac2eb5f707894584afee201fa8fe6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5677580574261012617
-    second: Rubble 4 - 2x2_0
-  - first:
-      213: -7467866936609132201
-    second: Rubble 4 - 2x2_1
+      213: -4928938051308969618
+    second: Clutter - Book pile 1.a_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,52 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rubble 4 - 2x2_0
+      name: Clutter - Book pile 1.a_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 63
-        width: 14
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9886c708371dace40800000000000000
-      internalID: 5677580574261012617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rubble 4 - 2x2_1
-      rect:
-        serializedVersion: 2
-        x: 30
+        x: 0
         y: 0
-        width: 79
-        height: 110
+        width: 40
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 751378d669ecc5890800000000000000
-      internalID: -7467866936609132201
+      spriteID: e61a2dbf4f4e89bb0800000000000000
+      internalID: -4928938051308969618
       vertices: []
       indices: 
       edges: []
@@ -172,9 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Rubble 4 - 2x2_0: 5677580574261012617
-      Rubble 4 - 2x2_1: -7467866936609132201
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
