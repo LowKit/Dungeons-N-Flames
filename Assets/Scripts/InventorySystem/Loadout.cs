@@ -111,9 +111,9 @@ public class Loadout : MonoBehaviour
 
     private void DisableItems()
     {
-        foreach (Transform child in itemHolder)
+        foreach (HandheldItem item in items)
         {
-            child.gameObject.SetActive(false);
+            item.gameObject.SetActive(item.keepActive);
         }
     }
 }

@@ -14,10 +14,9 @@ public class Enemy : MonoBehaviour, IDamageable
     Transform playerTransform;
     PlayerController playerController;
     float lastAttackTime;
-    bool hasAttacked = false;
     public bool isDead = false;
 
-    float enteredAttackRangeTime = 0;
+    float difficultyMultiplier = 1;
 
     public event Action OnDeath;
     private void Start()
@@ -25,9 +24,9 @@ public class Enemy : MonoBehaviour, IDamageable
         playerController = GameObject.FindFirstObjectByType<PlayerController>();
         playerTransform = playerController.transform;
 
-        ApplySettings();
+        UpdateSettings(difficultyMultiplier);
     }
-    private void ApplySettings()
+    public void UpdateSettings(float multiplier)
     {
         if (settings == null)
         {
@@ -35,9 +34,11 @@ public class Enemy : MonoBehaviour, IDamageable
             return;
         }
 
-        currentHeath = settings.maxHealth;
+        difficultyMultiplier = multiplier;
 
-        navMeshAgent.speed = settings.walkSpeed;
+        currentHeath = settings.maxHealth * difficultyMultiplier;
+        settings.attackCooldown *= difficultyMultiplier;
+        navMeshAgent.speed = settings.walkSpeed * difficultyMultiplier;
 
         navMeshAgent.updateRotation = false;
         navMeshAgent.updateUpAxis = false;
@@ -82,7 +83,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
             if (!IsInAttackCooldown(settings.attackCooldown))
             {
-                playerController.ApplyDamage(settings.baseDamage);
+                playerController.ApplyDamage(settings.baseDamage * difficultyMultiplier);
                 lastAttackTime = Time.time;
             }
         }
