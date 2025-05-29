@@ -31,21 +31,19 @@ public class Sword : HandheldItem
         efeito.transform.localScale = Vector3.one * settings.raioAtaque;*/
 
         // Detec��o de inimigos
-        Collider2D[] inimigos = Physics2D.OverlapCircleAll(transform.position, settings.raioAtaque / 2, inimigoLayer);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, settings.raioAtaque / 2, inimigoLayer);
 
-        foreach (Collider2D inimigo in inimigos)
+        foreach (Collider2D collider in colliders)
         {
-            Vector2 direcaoParaInimigo = (inimigo.transform.position - transform.position).normalized;
+            Vector2 direcaoParaInimigo = (collider.transform.position - transform.position).normalized;
             float anguloEntre = Vector2.Angle(direcaoAtaque, direcaoParaInimigo);
 
             if (anguloEntre <= settings.anguloAtaque / 2f)
             {
-                Debug.Log("Hit: " + inimigo.name);
-                IDamageable entity = inimigo.GetComponent<IDamageable>();
-                entity.ApplyDamage(settings.dano);
-            }
-            else{
-                Debug.Log("errei!");
+                if (collider.TryGetComponent(out IDamageable entity))
+                {
+                    entity.ApplyDamage(settings.dano);
+                }
             }
         }
     }

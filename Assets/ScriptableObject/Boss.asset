@@ -16,7 +16,7 @@ MonoBehaviour:
   walkSpeed: 0
   canMove: 0
   canAttack: 0
-  baseDamage: 25
+  baseDamage: 20
   attackCooldown: 0.5
   attackDistance: 3
   detectionDistance: 7.5

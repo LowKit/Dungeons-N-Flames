@@ -3,7 +3,7 @@ using System;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public static event Action OnInteractEvent;
+    public static event Action<string> OnInteractEvent;
     public static event Action<string> OnFocusEvent;
     public static event Action OnLoseFocusEvent;
 
@@ -24,8 +24,13 @@ public abstract class Interactable : MonoBehaviour
     {
         OnLoseFocusEvent?.Invoke();
     }
-    protected void TriggerOnInteract()
+    protected void TriggerOnInteract(string info)
     {
-        OnInteractEvent?.Invoke();
+        OnInteractEvent?.Invoke(info);
+    }
+
+    void OnDestroy()
+    {
+        TriggerOnLoseFocus();
     }
 }

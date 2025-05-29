@@ -24,8 +24,7 @@ public class ItemPickup : Interactable
         // If inventory isnt full, do the following.
         if(InventoryManager.instance.AddItem(item, 1))
         {
-            base.TriggerOnInteract();
-            base.TriggerOnLoseFocus(); // Updates the tooltip. Since this item is destroyed, we cant really do OnLoseFocus after.
+            base.TriggerOnInteract("Picked up " + item.itemName);
 
             Destroy(gameObject);
         }
