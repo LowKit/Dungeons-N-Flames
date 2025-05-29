@@ -12,7 +12,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private LayerMask hitLayer;
     [SerializeField] private float overlapRadius = 0.55f;
-
+    [SerializeField] private AudioClip cast;
+    [SerializeField] private AudioClip explosion;
     float timer;
     bool canMove = true;
     bool canDamage = true;
@@ -31,6 +32,7 @@ public class Projectile : MonoBehaviour
 
         RotateSprite(_spriteAngle);
         SetAttackSize(_attackSize);
+        if(cast != null) AudioSource.PlayClipAtPoint(cast, transform.position);
     }
 
     private void Update()
@@ -71,6 +73,7 @@ public class Projectile : MonoBehaviour
         canMove = false;
         canDamage = false;
         animator.SetTrigger("Explosion");
+        if(explosion != null) AudioSource.PlayClipAtPoint(explosion, transform.position);
         Destroy(gameObject, 0.8f);
     }
 

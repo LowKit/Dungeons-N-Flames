@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour, IDamageable
     bool hasAttacked = false;
     public bool isDead = false;
 
+    float enteredAttackRangeTime = 0;
+
     public event Action OnDeath;
     private void Start()
     {
@@ -44,8 +46,8 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (DependenciesAreNull() || isDead) return;
 
-        if(settings.canMove) MoveToPlayer();
-        if(settings.canAttack) AttackPlayer();
+        if (settings.canMove) MoveToPlayer();
+        if (settings.canAttack) AttackPlayer();
     }
 
     private void MoveToPlayer()
@@ -71,22 +73,18 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void AttackPlayer()
     {
-        if (DistanceToPlayer() <= settings.attackDistance && !IsInAttackCooldown(settings.attackCooldown / 2) && !hasAttacked)
+        float distance = DistanceToPlayer();
+
+        if (distance <= settings.attackDistance)
         {
-            // Attack Player
-            playerController.ApplyDamage(settings.baseDamage);
-            lastAttackTime = Time.time;
-            hasAttacked = true;
-        }
-        else if (DistanceToPlayer() <= settings.attackDistance && !IsInAttackCooldown(settings.attackCooldown) && hasAttacked)
-        {
-            // Attack Player
-            playerController.ApplyDamage(settings.baseDamage);
-            lastAttackTime = Time.time;
-        }
-        else if (DistanceToPlayer() > settings.attackDistance)
-        {
-            hasAttacked = false;
+            // Stop moving
+            navMeshAgent.isStopped = true;
+
+            if (!IsInAttackCooldown(settings.attackCooldown))
+            {
+                playerController.ApplyDamage(settings.baseDamage);
+                lastAttackTime = Time.time;
+            }
         }
     }
     public void ApplyDamage(float damage)
@@ -109,7 +107,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (isDead) return;
 
-        isDead = true; 
+        isDead = true;
         DropItems();
         OnDeath?.Invoke();
         Debug.Log("[Enemy] Enemy died.");
