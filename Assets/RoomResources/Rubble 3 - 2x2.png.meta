@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: bb1747e92237021419c563cb824000d6
+guid: dff98ad4d3455e348ae8de8f50f08b83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 105169053199506356
-    second: projectile_0
+      213: -7840969269677979026
+    second: Rubble 3 - 2x2_0
+  - first:
+      213: -2582782342021518659
+    second: Rubble 3 - 2x2_1
+  - first:
+      213: 740196004430547133
+    second: Rubble 3 - 2x2_2
+  - first:
+      213: -2134447623196435340
+    second: Rubble 3 - 2x2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +105,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: projectile_0
+      name: Rubble 3 - 2x2_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 4
-        width: 38
-        height: 20
+        x: 21
+        y: 21
+        width: 105
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4bb125952b2a57100800000000000000
-      internalID: 105169053199506356
+      spriteID: e6a07121ef74f2390800000000000000
+      internalID: -7840969269677979026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rubble 3 - 2x2_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 104
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbae7a3e42d182cd0800000000000000
+      internalID: -2582782342021518659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rubble 3 - 2x2_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 29
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db80f342854b54a00800000000000000
+      internalID: 740196004430547133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rubble 3 - 2x2_3
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 27
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c13bb023be062e0800000000000000
+      internalID: -2134447623196435340
       vertices: []
       indices: 
       edges: []
@@ -147,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      projectile_0: 105169053199506356
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
