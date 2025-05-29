@@ -11,6 +11,7 @@ public class DungeonRoom : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs = new GameObject[0];
     [SerializeField] private Transform[] enemySpawns = new Transform[0];
     [SerializeField] private int maxEnemyCount = 1;
+    [SerializeField] private bool randomizeCount = true;
     [SerializeField] private bool canLeaveImmediately = true;
 
     [Header("Interactables")]
@@ -66,15 +67,16 @@ public class DungeonRoom : MonoBehaviour
             spawnPositions = new Vector2[] { transform.position };
         }
 
+        int count = randomizeCount ? Random.Range(0, maxEnemyCount) : maxEnemyCount;
+
         // Spawn enemies
-        for (int i = 0; i < maxEnemyCount; i++)
+        for (int i = 0; i < count; i++)
         {
             GameObject prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
             Vector2 spawnPos = spawnPositions[Random.Range(0, spawnPositions.Length)];
             InstantiateEnemy(prefab, spawnPos);
         }
     }
-
 
     private void InstantiateEnemy(GameObject prefab, Vector3 position)
     {
