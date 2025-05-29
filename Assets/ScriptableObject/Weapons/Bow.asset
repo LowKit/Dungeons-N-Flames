@@ -15,3 +15,4 @@ MonoBehaviour:
   dano: 25
   raioAtaque: 3
   anguloAtaque: 360
+  cooldown: 1.5

@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: e4db248a90bcd414eb641a60fc1b08e7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1010648246609649896
+    second: Ritual Circle - Glowing 3_0
+  - first:
+      213: -998267416441684144
+    second: Ritual Circle - Glowing 3_1
+  - first:
+      213: -1582886686132495043
+    second: Ritual Circle - Glowing 3_2
+  - first:
+      213: 1297363056668835386
+    second: Ritual Circle - Glowing 3_3
+  - first:
+      213: -5864611030484569099
+    second: Ritual Circle - Glowing 3_4
+  - first:
+      213: -7529481079338204181
+    second: Ritual Circle - Glowing 3_5
+  - first:
+      213: -4967796388321679198
+    second: Ritual Circle - Glowing 3_6
+  - first:
+      213: 6127784626096459799
+    second: Ritual Circle - Glowing 3_7
+  - first:
+      213: -2849147444705744304
+    second: Ritual Circle - Glowing 3_8
+  - first:
+      213: -1493792103388400594
+    second: Ritual Circle - Glowing 3_9
+  - first:
+      213: 4466864731138378014
+    second: Ritual Circle - Glowing 3_10
+  - first:
+      213: -8155764566712293046
+    second: Ritual Circle - Glowing 3_11
+  - first:
+      213: -3242023030055738776
+    second: Ritual Circle - Glowing 3_12
+  - first:
+      213: -8084168146294679524
+    second: Ritual Circle - Glowing 3_13
+  - first:
+      213: -234153818944955999
+    second: Ritual Circle - Glowing 3_14
+  - first:
+      213: -7386388388646560242
+    second: Ritual Circle - Glowing 3_15
+  - first:
+      213: 4337130656732600643
+    second: Ritual Circle - Glowing 3_16
+  - first:
+      213: 3520663685267690617
+    second: Ritual Circle - Glowing 3_17
+  - first:
+      213: -4059150040304735892
+    second: Ritual Circle - Glowing 3_18
+  - first:
+      213: 3299693552926242670
+    second: Ritual Circle - Glowing 3_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81fd5fb36c479f1f0800000000000000
+      internalID: -1010648246609649896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 1
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05f7524e2117522f0800000000000000
+      internalID: -998267416441684144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_2
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d906902f4780ae0800000000000000
+      internalID: -1582886686132495043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3ef57983d8210210800000000000000
+      internalID: 1297363056668835386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_4
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3312ef657bc9ea0800000000000000
+      internalID: -5864611030484569099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_5
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3850be9d8e18790800000000000000
+      internalID: -7529481079338204181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_6
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 12
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a82e9d5187de0bb0800000000000000
+      internalID: -4967796388321679198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_7
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 4
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710549aa6a34a0550800000000000000
+      internalID: 6127784626096459799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_8
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 1
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a2a959e7bc578d0800000000000000
+      internalID: -2849147444705744304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_9
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 1
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2430451ffbf44be0800000000000000
+      internalID: -1493792103388400594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_10
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 2
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1949377ecd7dfd30800000000000000
+      internalID: 4466864731138378014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4965617657e0de80800000000000000
+      internalID: -8155764566712293046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_12
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86264eb2b350203d0800000000000000
+      internalID: -3242023030055738776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_13
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c18d39717e34fcf80800000000000000
+      internalID: -8084168146294679524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_14
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 3
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a91cfe975e10ccf0800000000000000
+      internalID: -234153818944955999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_15
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 8
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ed6a135e64e7990800000000000000
+      internalID: -7386388388646560242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_16
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 0
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349d00b6a55903c30800000000000000
+      internalID: 4337130656732600643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_17
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9749ffde7f8ebd030800000000000000
+      internalID: 3520663685267690617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 2
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c69af9d6b800ba7c0800000000000000
+      internalID: -4059150040304735892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Glowing 3_19
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67b0d9cdcddacd20800000000000000
+      internalID: 3299693552926242670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ritual Circle - Glowing 3_0: -1010648246609649896
+      Ritual Circle - Glowing 3_1: -998267416441684144
+      Ritual Circle - Glowing 3_10: 4466864731138378014
+      Ritual Circle - Glowing 3_11: -8155764566712293046
+      Ritual Circle - Glowing 3_12: -3242023030055738776
+      Ritual Circle - Glowing 3_13: -8084168146294679524
+      Ritual Circle - Glowing 3_14: -234153818944955999
+      Ritual Circle - Glowing 3_15: -7386388388646560242
+      Ritual Circle - Glowing 3_16: 4337130656732600643
+      Ritual Circle - Glowing 3_17: 3520663685267690617
+      Ritual Circle - Glowing 3_18: -4059150040304735892
+      Ritual Circle - Glowing 3_19: 3299693552926242670
+      Ritual Circle - Glowing 3_2: -1582886686132495043
+      Ritual Circle - Glowing 3_3: 1297363056668835386
+      Ritual Circle - Glowing 3_4: -5864611030484569099
+      Ritual Circle - Glowing 3_5: -7529481079338204181
+      Ritual Circle - Glowing 3_6: -4967796388321679198
+      Ritual Circle - Glowing 3_7: 6127784626096459799
+      Ritual Circle - Glowing 3_8: -2849147444705744304
+      Ritual Circle - Glowing 3_9: -1493792103388400594
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

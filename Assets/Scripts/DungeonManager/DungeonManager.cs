@@ -33,7 +33,7 @@ public class DungeonManager : MonoBehaviour
     {
         playerController.WarpTo(room.GetPlayerSpawnPosition());
 
-        difficultyMultipler += difficultyMultipler;
+        difficultyMultipler += difficultyMultiplierIncrement;
 
         currentRoom = room;
         currentRoom.InitializeRoom();

@@ -67,7 +67,8 @@ public class DungeonRoom : MonoBehaviour
             spawnPositions = new Vector2[] { transform.position };
         }
 
-        int count = randomizeCount ? Random.Range(0, maxEnemyCount) : maxEnemyCount;
+
+        int count = randomizeCount && maxEnemyCount > 0 ? Random.Range(1, maxEnemyCount) : maxEnemyCount;
 
         // Spawn enemies
         for (int i = 0; i < count; i++)

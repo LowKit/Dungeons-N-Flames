@@ -10,6 +10,8 @@ public class Bow : HandheldItem
     [SerializeField] private float projectileSpeed = 2;
     [SerializeField] private float attackSize = 1;
 
+    float lastAttackTime;
+
     private void Update()
     {
         // Ataque
@@ -21,10 +23,14 @@ public class Bow : HandheldItem
 
     private void Shoot()
     {
+        if (IsInAttackCooldown(settings.cooldown)) return;
+
         Vector3 mousePos = PlayerController.instance.GetMousePosition();
         Vector2 direction = (mousePos - transform.position).normalized;
 
         CreateProjectile(transform.position, direction);
+
+        lastAttackTime = Time.time;
     }
 
     private void CreateProjectile(Vector3 position, Vector2 direction)
@@ -37,4 +43,6 @@ public class Bow : HandheldItem
         int id = PlayerController.instance.GetInstanceID();
         projectile.Initialize(id, direction, projectileSpeed, settings.dano, attackSize, angle);
     }
+
+    private bool IsInAttackCooldown(float cooldown) => Time.time - lastAttackTime < cooldown;
 }

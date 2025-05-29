@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour, IDamageable
     Transform playerTransform;
     PlayerController playerController;
     float lastAttackTime;
-    public bool isDead = false;
+    [HideInInspector] public bool isDead = false;
 
     float difficultyMultiplier = 1;
 
@@ -37,7 +37,6 @@ public class Enemy : MonoBehaviour, IDamageable
         difficultyMultiplier = multiplier;
 
         currentHeath = settings.maxHealth * difficultyMultiplier;
-        settings.attackCooldown *= difficultyMultiplier;
         navMeshAgent.speed = settings.walkSpeed * difficultyMultiplier;
 
         navMeshAgent.updateRotation = false;
@@ -160,5 +159,5 @@ public class Enemy : MonoBehaviour, IDamageable
     }
 
     private float DistanceToPlayer() => Vector2.Distance(transform.position, playerTransform.position);
-    private bool IsInAttackCooldown(float cooldown) => Time.time - lastAttackTime < cooldown;
+    private bool IsInAttackCooldown(float cooldown) => Time.time - lastAttackTime < cooldown * difficultyMultiplier;
 }

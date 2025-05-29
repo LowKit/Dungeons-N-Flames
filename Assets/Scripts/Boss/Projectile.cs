@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
 
         RotateSprite(_spriteAngle);
         SetAttackSize(_attackSize);
-        if(cast != null) AudioSource.PlayClipAtPoint(cast, transform.position);
+        if (cast != null) AudioSource.PlayClipAtPoint(cast, transform.position);
     }
 
     private void Update()
@@ -74,12 +74,19 @@ public class Projectile : MonoBehaviour
         canMove = false;
         canDamage = false;
         animator.SetTrigger("Explosion");
-        if(explosion != null) AudioSource.PlayClipAtPoint(explosion, transform.position);
+        if (explosion != null) AudioSource.PlayClipAtPoint(explosion, transform.position);
         Destroy(gameObject, 0.8f);
     }
 
     private void SetAttackSize(float size)
     {
         transform.localScale = Vector3.one * size;
+    }
+    public void Redirect(Vector2 newDirection, int newOwnerID)
+    {
+        Debug.Log(newDirection + "speed: " + newDirection * speed + "speeeddd: " + (newDirection * speed).normalized);
+        direction = newDirection.normalized;
+        ownerID = newOwnerID;
+        timer = lifeTime;
     }
 }

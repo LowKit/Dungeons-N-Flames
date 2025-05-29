@@ -58,7 +58,7 @@ MonoBehaviour:
   audioSource: {fileID: 6262960583782687934}
   projectilePrefab: {fileID: 7647755824921356000, guid: 72af1906cf938a64aa1bebd237600d80, type: 3}
   projectileSpeed: 5
-  projectileRate: 1
+  projectileRate: 5
   fireballClip: {fileID: 0}
   stages:
   - maxHealth: 100

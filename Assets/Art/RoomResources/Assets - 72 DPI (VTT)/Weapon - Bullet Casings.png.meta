@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 741a1e8cbe124fe42a48de5fe1030f0f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -372044460193850423
+    second: Weapon - Bullet Casings_0
+  - first:
+      213: -1963048116871608851
+    second: Weapon - Bullet Casings_1
+  - first:
+      213: 2309040893069655927
+    second: Weapon - Bullet Casings_2
+  - first:
+      213: 1673602572001139140
+    second: Weapon - Bullet Casings_3
+  - first:
+      213: 1375010637334753587
+    second: Weapon - Bullet Casings_4
+  - first:
+      213: -4783350032521949865
+    second: Weapon - Bullet Casings_5
+  - first:
+      213: -3003479577263827676
+    second: Weapon - Bullet Casings_6
+  - first:
+      213: -8967932030808873006
+    second: Weapon - Bullet Casings_7
+  - first:
+      213: 8138230486252206280
+    second: Weapon - Bullet Casings_8
+  - first:
+      213: 7254592540798069220
+    second: Weapon - Bullet Casings_9
+  - first:
+      213: -3562217180592830656
+    second: Weapon - Bullet Casings_10
+  - first:
+      213: -6084233968100412540
+    second: Weapon - Bullet Casings_11
+  - first:
+      213: -5755820272848205114
+    second: Weapon - Bullet Casings_12
+  - first:
+      213: 6424905972046675380
+    second: Weapon - Bullet Casings_13
+  - first:
+      213: -5129867304392015092
+    second: Weapon - Bullet Casings_14
+  - first:
+      213: -2910416591694536624
+    second: Weapon - Bullet Casings_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 62
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb5e7dd88b36daf0800000000000000
+      internalID: -372044460193850423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 73
+        width: 29
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de54edc632ad1c4e0800000000000000
+      internalID: -1963048116871608851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 48
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f744b557c5b0020800000000000000
+      internalID: 2309040893069655927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_3
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 73
+        width: 25
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c9de4f0ca4d93710800000000000000
+      internalID: 1673602572001139140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 37
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331b8b8b3e4051310800000000000000
+      internalID: 1375010637334753587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 50
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d0d2b1d702e9db0800000000000000
+      internalID: -4783350032521949865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_6
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 31
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4259c03dc3f7156d0800000000000000
+      internalID: -3003479577263827676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_7
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 45
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d72ac505518b8380800000000000000
+      internalID: -8967932030808873006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_8
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 32
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c83151528dc0f070800000000000000
+      internalID: 8138230486252206280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_9
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 29
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9a778ba7d7da460800000000000000
+      internalID: 7254592540798069220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_10
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 35
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04788f10956709ec0800000000000000
+      internalID: -3562217180592830656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_11
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 25
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48372011175709ba0800000000000000
+      internalID: -6084233968100412540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_12
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 7
+        width: 16
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ca04ed15f73f10b0800000000000000
+      internalID: -5755820272848205114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_13
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 28
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdb023e0f9d92950800000000000000
+      internalID: 6424905972046675380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_14
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 6
+        width: 25
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03c2d8addc0fc8b0800000000000000
+      internalID: -5129867304392015092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon - Bullet Casings_15
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 14
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050e4a7a78f1c97d0800000000000000
+      internalID: -2910416591694536624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Weapon - Bullet Casings_0: -372044460193850423
+      Weapon - Bullet Casings_1: -1963048116871608851
+      Weapon - Bullet Casings_10: -3562217180592830656
+      Weapon - Bullet Casings_11: -6084233968100412540
+      Weapon - Bullet Casings_12: -5755820272848205114
+      Weapon - Bullet Casings_13: 6424905972046675380
+      Weapon - Bullet Casings_14: -5129867304392015092
+      Weapon - Bullet Casings_15: -2910416591694536624
+      Weapon - Bullet Casings_2: 2309040893069655927
+      Weapon - Bullet Casings_3: 1673602572001139140
+      Weapon - Bullet Casings_4: 1375010637334753587
+      Weapon - Bullet Casings_5: -4783350032521949865
+      Weapon - Bullet Casings_6: -3003479577263827676
+      Weapon - Bullet Casings_7: -8967932030808873006
+      Weapon - Bullet Casings_8: 8138230486252206280
+      Weapon - Bullet Casings_9: 7254592540798069220
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
