@@ -2,7 +2,7 @@ using SABI;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Dependencies")]
     [SerializeField] private EnemySettings settings;
@@ -38,10 +38,10 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (DependenciesAreNull()) return;
+        if (DependenciesAreNull() || isDead) return;
 
         if(settings.canMove) MoveToPlayer();
-        AttackPlayer();
+        if(settings.canAttack) AttackPlayer();
     }
 
     private void MoveToPlayer()
@@ -85,7 +85,6 @@ public class Enemy : MonoBehaviour
             hasAttacked = false;
         }
     }
-
     public void ApplyDamage(float damage)
     {
         currentHeath -= damage;
@@ -94,6 +93,12 @@ public class Enemy : MonoBehaviour
             currentHeath = 0;
             OnDeath();
         }
+    }
+
+    public void UpdateHealth(float health)
+    {
+        currentHeath = health;
+        if (currentHeath <= 0) OnDeath();
     }
 
     private void OnDeath()
@@ -105,6 +110,11 @@ public class Enemy : MonoBehaviour
     private void DropItems()
     {
         if (settings.dropCount <= 0 || settings.dropType.IsNullOrEmpty()) return;
+        if (Random.Range(0, settings.dropChance) != 0)
+        {
+            Debug.Log("[Enemy] Couldnt drop items (No chance) ");
+            return;
+        }
 
         GameObject[] prefabs = PrefabManager.Instance.GetRandomPrefabs(settings.dropType, settings.dropCount);
 
@@ -116,6 +126,12 @@ public class Enemy : MonoBehaviour
 
         foreach (GameObject prefab in prefabs)
         {
+            if (prefab == null)
+            {
+                Debug.Log("[Enemy] Couldnt drop items (Prefab is null).");
+                continue;
+            }
+
             GameObject currentDrop = Instantiate(prefab);
             Vector2 position = new Vector2(
                 Random.Range(-settings.dropRange, settings.dropRange),
@@ -124,8 +140,6 @@ public class Enemy : MonoBehaviour
             currentDrop.transform.position = position;
         }
     }
-
-
 
     private bool DependenciesAreNull()
     {

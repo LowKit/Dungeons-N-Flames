@@ -10,7 +10,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private GameObject toggle;
 
-    [HideInInspector] public Item item;
+    public Item item;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public Transform currentParent;
@@ -40,7 +40,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
     }
     public void DropItem()
     {
-        InventoryManager.instance.DropItem(item);
+        //InventoryManager.instance.DropItem(item);
     }
     // Detect click on this inventory item
     public void OnPointerClick(PointerEventData eventData)

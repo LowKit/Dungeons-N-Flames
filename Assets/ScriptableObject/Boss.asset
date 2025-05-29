@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18fd2a394c68c0a41ac8cbe2a8dc18a8, type: 3}
-  m_Name: DefaultEnemy
+  m_Name: Boss
   m_EditorClassIdentifier: 
   maxHealth: 100
-  walkSpeed: 3
-  canMove: 1
+  walkSpeed: 0
+  canMove: 0
+  canAttack: 0
   baseDamage: 25
-  attackCooldown: 1.5
-  attackDistance: 1.75
+  attackCooldown: 0.5
+  attackDistance: 3
   detectionDistance: 7.5
   dropChance: 4
   dropRange: 2.25
-  dropType: sword_pickups
+  dropType: 
   dropCount: 1

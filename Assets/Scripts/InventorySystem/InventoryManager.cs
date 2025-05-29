@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -19,6 +20,8 @@ public class InventoryManager : MonoBehaviour
     public int selectedSlot = -1;
 
     public event Action<Item> OnSelectionChange;
+    public event Action<Item> OnItemAdded;
+    public event Action<Item> OnItemRemoved;
     private void Awake()
     {
         instance = this;
@@ -51,6 +54,7 @@ public class InventoryManager : MonoBehaviour
             {
                 itemInSlot.count += amount;
                 itemInSlot.RefreshCount();
+                OnItemAdded?.Invoke(item);
                 return true;
             }
         }
@@ -59,6 +63,8 @@ public class InventoryManager : MonoBehaviour
             SpawnItem(item, amount);
             return true;
         }
+
+        Debug.Log("[Inventory] Couldnt add item to Inventory (No Slots available.");
 
         return false;
     }
@@ -69,28 +75,54 @@ public class InventoryManager : MonoBehaviour
 
         inventoryItem.count = count;
         inventoryItem.InitializeItem(item);
-
+  
         inventorySlots.Add(inventoryItem);
+        OnItemAdded?.Invoke(inventoryItem.item);
+
+        Debug.Log("[Loadout] Item spawned: " + item.itemName);
     }
 
     public void ChangeSelectedSlot(int newValue)
     {
-        // Deselect the currently selected slot
-        if (selectedSlot == newValue)
+        // Check if newValue is within valid range (for virtual slots)
+        if (newValue < 0 || newValue >= maxSlots)
         {
-            inventorySlots[selectedSlot].Deselect();
-            selectedSlot = -1;
-            OnSelectionChange?.Invoke(null); // Notify that no item is selected
+            Debug.LogWarning("[InventoryManager] Selected slot index out of range.");
             return;
         }
-        if (selectedSlot >= 0 && selectedSlot < inventorySlots.Count)
+
+        // If already selected, deselect it
+        if (selectedSlot == newValue)
+        {
+            if (selectedSlot >= 0 && selectedSlot < inventorySlots.Count && inventorySlots[selectedSlot] != null)
+            {
+                inventorySlots[selectedSlot].Deselect();
+            }
+            selectedSlot = -1;
+            OnSelectionChange?.Invoke(null);
+            return;
+        }
+
+        // Deselect currently selected slot
+        if (selectedSlot >= 0 && selectedSlot < inventorySlots.Count && inventorySlots[selectedSlot] != null)
         {
             inventorySlots[selectedSlot].Deselect();
         }
 
-        inventorySlots[newValue].Select();
+        // Select new slot if it has an item
+        if (newValue < inventorySlots.Count && inventorySlots[newValue] != null)
+        {
+            inventorySlots[newValue].Select();
+            OnSelectionChange?.Invoke(inventorySlots[newValue].item);
+        }
+        else
+        {
+            // If slot exists virtually but no item
+            OnSelectionChange?.Invoke(null);
+        }
+
+        // Update selectedSlot
         selectedSlot = newValue;
-        OnSelectionChange?.Invoke(inventorySlots[newValue].item);
     }
 
     public void ChangeSelectedSlot(InventoryItem selectedItem)
@@ -109,6 +141,7 @@ public class InventoryManager : MonoBehaviour
         if (selectedSlot >= 0 && selectedSlot < inventorySlots.Count)
         {
             inventorySlots[selectedSlot].Deselect();
+            OnSelectionChange?.Invoke(null);
         }
 
         // Select the new slot
@@ -121,18 +154,26 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    public void DestroyItem(InventoryItem item)
+    public void DestroyItem(InventoryItem inventoryItem)
     {
-        InventoryItem selectedItem = inventorySlots[selectedSlot];
-
-        if (selectedItem.GetHashCode() == item.GetHashCode())
+        inventorySlots.Remove(inventoryItem);
+        Destroy(inventoryItem.gameObject);
+        OnItemRemoved?.Invoke(inventoryItem.item);
+    }
+    public void DestroyItem(Item item)
+    {
+        for (int i = 0; i < inventorySlots.Count; i++)
         {
-            inventorySlots.Remove(selectedItem);
-            Destroy(selectedItem.gameObject);
-            OnSelectionChange?.Invoke(null);
+            if (inventorySlots[i].item.id == item.id)
+            {
+                InventoryItem inventoryItem = inventorySlots[i];
+                DestroyItem(inventoryItem);
+                return;
+            }
         }
     }
 
+    /*
     public void DropItem(Item item)
     {
         InventoryItem selectedItem = inventorySlots[selectedSlot];
@@ -145,14 +186,14 @@ public class InventoryManager : MonoBehaviour
         GameObject itemPrefab = GetItemPrefab(item.id);
         if (itemPrefab != null)
         {
-            /*
+            
             Transform orientation = PlayerController.instance.orientation;
             Vector3 direction = orientation.forward;
             float distance = GetItemSpawnDistance(orientation.position, direction,maxDropDistance);
             
             Vector3 dropPosition = orientation.position + direction * distance;
             Instantiate(itemPrefab,dropPosition,Quaternion.identity);
-            */
+            
         }
 
         // Update inventory and notify hand inventory
@@ -160,6 +201,8 @@ public class InventoryManager : MonoBehaviour
         Destroy(selectedItem.gameObject);
         OnSelectionChange?.Invoke(null);
     }
+    */
+
 
     private float GetItemSpawnDistance(Vector3 position, Vector3 direction, float maxDistance)
     {
@@ -174,19 +217,5 @@ public class InventoryManager : MonoBehaviour
 
         InventoryItem itemInSlot = inventorySlots[selectedSlot];
         return itemInSlot != null ? itemInSlot.item : null;
-    }
-
-    public GameObject GetItemPrefab(string itemId)
-    {
-        foreach (GameObject gm in itemPrefabs)
-        {
-            if (gm.TryGetComponent<ItemPickup>(out ItemPickup itemPickup))
-            {
-                if (itemPickup.item.id == itemId) return gm;
-            }
-        }
-
-        Debug.LogWarning("[InventoryManager] No item prefab was Found!");
-        return null;
     }
 }

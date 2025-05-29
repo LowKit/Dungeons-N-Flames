@@ -11,6 +11,7 @@ public class EnemySettings : ScriptableObject
     public bool canMove = true;
 
     [Header("Attack Settings")]
+    public bool canAttack = true;
     public float baseDamage = 25;
     public float attackCooldown = 0.5f;
     public float attackDistance = 3;
@@ -19,6 +20,7 @@ public class EnemySettings : ScriptableObject
     public float detectionDistance = 7.5f;
 
     [Header("Drop Settings")]
+    public int dropChance = 4;
     public float dropRange = 2.25f;
     public string dropType;
     public int dropCount = 1;

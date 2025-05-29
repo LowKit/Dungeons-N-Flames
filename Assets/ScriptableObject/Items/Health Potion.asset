@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 022cc1b8d26044b418c2e37ae193e0e5, type: 3}
-  m_Name: Big_shield
+  m_Name: Health Potion
   m_EditorClassIdentifier: 
-  id: big_sword
-  itemName: Big Sword
-  itemDescription: The Big Sword (Simple)
-  value: 100
+  id: health_potion
+  itemName: Health Potion
+  itemDescription: This is a Health Potion
+  value: 0
   maxStackSize: 1
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  guid: 
+  icon: {fileID: 21300000, guid: 0e9f2b047d134dc4f929b00065e64551, type: 3}
