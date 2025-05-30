@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Nuke : HandheldItem
+public class Nuke : Weapon
 {
     [SerializeField] private LayerMask hitLayer;
     [SerializeField] private WeaponSettings settings;
