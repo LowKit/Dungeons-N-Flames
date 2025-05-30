@@ -15,8 +15,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private AudioClip cast;
     [SerializeField] private AudioClip explosion;
     float timer;
-    bool canMove = true;
-    bool canDamage = true;
+    bool isActive = true;
 
     private void Start()
     {
@@ -37,14 +36,14 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        if (canMove && canDamage)
+        if (isActive)
         {
             transform.Translate(direction * speed * Time.deltaTime);
             CheckForDamageable();
         }
 
         timer -= Time.deltaTime;
-        if (timer <= 0) DestroyProjectile();
+        if (timer <= 0 && isActive) DestroyProjectile();
     }
 
     private void CheckForDamageable()
@@ -72,8 +71,7 @@ public class Projectile : MonoBehaviour
 
     public void DestroyProjectile()
     {
-        canMove = false;
-        canDamage = false;
+        isActive = false;
         animator.SetTrigger("Explosion");
         if (explosion != null) AudioSource.PlayClipAtPoint(explosion, transform.position);
         Destroy(gameObject, 0.8f);
