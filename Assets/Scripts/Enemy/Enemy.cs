@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour, IDamageable
         isDead = true;
         DropItems();
         OnDeath?.Invoke();
+        Destroy(gameObject, 0.35f);
         Debug.Log("[Enemy] Enemy died.");
     }
     private void DropItems()

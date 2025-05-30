@@ -1126,8 +1126,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285953654
-  m_fontColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1315,6 +1315,10 @@ PrefabInstance:
     - target: {fileID: 2619761214991611048, guid: fffe455ab3091174e980eea8a872286a, type: 3}
       propertyPath: m_Name
       value: CombatRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920818117663898101, guid: fffe455ab3091174e980eea8a872286a, type: 3}
+      propertyPath: roomProbability
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1530,6 +1534,14 @@ PrefabInstance:
     - target: {fileID: 333151430117950502, guid: f71ea82fb8da0d6459514be244b080d2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 876756092287721763, guid: f71ea82fb8da0d6459514be244b080d2, type: 3}
+      propertyPath: maxEnemyCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 876756092287721763, guid: f71ea82fb8da0d6459514be244b080d2, type: 3}
+      propertyPath: roomProbability
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8665913744491524171, guid: f71ea82fb8da0d6459514be244b080d2, type: 3}
       propertyPath: m_Name

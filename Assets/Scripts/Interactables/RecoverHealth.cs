@@ -5,9 +5,7 @@ public class RecoverHealth : Interactable
     bool canuse = true;
     [Header("Interaction Settings")]
     [SerializeField] private string focusText = "Click F to Recover HP";
-    public GameObject chooseKit;
     [SerializeField] private int healAmount = 1;
-    float actualHP = 0f;
     float maxHP = 0f;
 
     public override void OnFocus()
@@ -30,6 +28,11 @@ public class RecoverHealth : Interactable
     public override void OnLoseFocus()
     {
         TriggerOnLoseFocus();
+    }
+
+    public void ToggleInteractable(bool toggle)
+    {
+        canuse = toggle;
     }
 
 }

@@ -15,3 +15,7 @@ MonoBehaviour:
   prefabReferences:
   - referenceKey: potion_health
     prefab: {fileID: 5984627406067371165, guid: 850c917d3cab4c844b05706916742b31, type: 3}
+  - referenceKey: coin_gold
+    prefab: {fileID: 66405957923506617, guid: 61c260b03aa18084c9155602399bda1f, type: 3}
+  - referenceKey: coin_crystal
+    prefab: {fileID: 7747251956247023432, guid: 3b91e08762a2b9e4095fd93e993f568a, type: 3}

@@ -2,7 +2,7 @@
 
 using System;
 
-public class Weapon : HandheldItem
+public abstract class Weapon : HandheldItem
 {
     public static event Action<float> OnDamageDealt;
 
@@ -10,4 +10,6 @@ public class Weapon : HandheldItem
     {
         OnDamageDealt?.Invoke(dmg);
     }
+
+    public virtual void UpgradeWeapon(float multiplier) {}
 }

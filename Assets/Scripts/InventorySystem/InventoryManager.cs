@@ -81,6 +81,41 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
+    public bool RemoveItem(string itemId, int count)
+    {
+        int remainingToRemove = count;
+
+        for (int i = 0; i < inventorySlots.Count; i++)
+        {
+            InventoryItem itemInSlot = inventorySlots[i];
+
+            if (itemInSlot != null && itemInSlot.item.id == itemId)
+            {
+                if (itemInSlot.count > remainingToRemove)
+                {
+                    itemInSlot.count -= remainingToRemove;
+                    itemInSlot.RefreshCount();
+                    OnItemRemoved?.Invoke(itemInSlot.item);
+                    return true;
+                }
+                else
+                {
+                    remainingToRemove -= itemInSlot.count;
+                    OnItemRemoved?.Invoke(itemInSlot.item);
+                    DestroyItem(itemInSlot);
+                    i--; // Adjust index since we removed an item
+                }
+
+                if (remainingToRemove <= 0)
+                    return true;
+            }
+        }
+
+        Debug.LogWarning($"[Inventory] Tried to remove item ID {itemId}, but not enough quantity was found.");
+        return false;
+    }
+
+
     void SpawnItem(Item item, int count)
     {
         InventoryItem inventoryItem = Instantiate(inventoryItemPrefab, itemHolder);

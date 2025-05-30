@@ -84,4 +84,9 @@ public class Sword : Weapon
     }
 
     private bool IsInAttackCooldown(float cooldown) => Time.time - lastAttackTime < cooldown;
+
+    public override void UpgradeWeapon(float increment)
+    {
+        IncrementDamageMultiplier(increment);
+    }
 }

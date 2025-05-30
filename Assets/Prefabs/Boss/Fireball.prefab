@@ -157,12 +157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e80a507d79ab57949b728cde7687b314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  keepActive: 0
+  playerController: {fileID: 0}
+  loadout: {fileID: 0}
   lifeTime: 5
   spriteTransform: {fileID: 4660790220387107404}
   animator: {fileID: 1047303771229691219}
   hitLayer:
     serializedVersion: 2
-    m_Bits: 640
+    m_Bits: 641
   overlapRadius: 0.55
   cast: {fileID: 8300000, guid: 69e43b3bd20cc5c4bb435f4c74ddb078, type: 3}
   explosion: {fileID: 0}
