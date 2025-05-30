@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class Bow : HandheldItem
+public class Bow : Weapon
 {
     [Header("Attack Settings")]
     [SerializeField] private WeaponSettings settings;

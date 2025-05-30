@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class Sword : HandheldItem
+public class Sword : Weapon
 {
     [Header("Ataque")]
     [SerializeField] private LayerMask inimigoLayer;
