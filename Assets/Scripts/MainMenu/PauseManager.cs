@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
@@ -41,6 +42,15 @@ public class PauseManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("O jogo foi encerrado.");
+    }
+
+    public void TryAgain()
+    {
+        SceneManager.LoadScene("backup");
+    }
+    public void BackMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
 
