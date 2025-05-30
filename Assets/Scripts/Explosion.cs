@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Explosion : MonoBehaviour
+public class Explosion : Weapon
 {
     [Header("Settings")]
     [SerializeField] private Animator animator;
@@ -28,6 +28,7 @@ public class Explosion : MonoBehaviour
             if (collider.TryGetComponent(out IDamageable entity))
             {
                 entity.ApplyDamage(settings.dano * DungeonManager.instance.difficultyMultipler);
+                TriggerOnDamageDealt(settings.dano);
             }
         }
     }

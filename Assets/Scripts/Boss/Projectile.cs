@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : Weapon
 {
     public float lifeTime = 3f;
     private float speed = 1f;
@@ -59,6 +59,11 @@ public class Projectile : MonoBehaviour
                 Debug.Log(collider.name);
                 entity.ApplyDamage(damage);
                 DestroyProjectile();
+
+                if (ownerID == PlayerController.instance.GetInstanceID())
+                {
+                    TriggerOnDamageDealt(damage);
+                }
             }
         }
     }
