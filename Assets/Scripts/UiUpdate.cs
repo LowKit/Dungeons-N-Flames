@@ -5,10 +5,13 @@ using System.Collections;
 
 public class UiUpdate : MonoBehaviour
 {
-
+    
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Image mouseInfoText;
+    [SerializeField] private Image mouseInfoDMGText;
     [SerializeField] private TextMeshProUGUI InfoText;
+    [SerializeField] private TextMeshProUGUI InfoDMGText;
+    [SerializeField] private GameObject DeadGui;
 
     [Header("Interact Message Settings")]
     [SerializeField] private TextMeshProUGUI interactMessageText;
@@ -30,6 +33,12 @@ public class UiUpdate : MonoBehaviour
         {
             mouseInfoText.transform.position = Input.mousePosition;
         }
+
+        if (mouseInfoDMGText.gameObject.activeSelf)
+        {
+            mouseInfoDMGText.transform.position = Input.mousePosition;
+        }
+        
     }
 
     private void OnEnable()
@@ -38,6 +47,7 @@ public class UiUpdate : MonoBehaviour
         Interactable.OnFocusEvent += MouseFocus;
         Interactable.OnLoseFocusEvent += MouseNoFocus;
         Interactable.OnInteractEvent += ShowInteractMessage;
+        Weapon.OnDamageDealt += OnDamageDealt;
     }
 
     private void OnDisable()
@@ -46,12 +56,33 @@ public class UiUpdate : MonoBehaviour
         Interactable.OnFocusEvent -= MouseFocus;
         Interactable.OnLoseFocusEvent -= MouseNoFocus;
         Interactable.OnInteractEvent -= ShowInteractMessage;
+        Weapon.OnDamageDealt -= OnDamageDealt;
+    }
+
+    private void OnDamageDealt(float dmg)
+    {
+        mouseInfoDMGText.gameObject.SetActive(true);
+        InfoDMGText.text = System.Convert.ToString(dmg);
+        mouseInfoDMGText.transform.position = Input.mousePosition;
+
+        StartCoroutine(HideDamageTextAfterDelay(1f));
+    }
+
+    private IEnumerator HideDamageTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        mouseInfoText.gameObject.SetActive(false);
     }
 
     private void HealthChage(float currenthp, float maxhp)
     {
         float fill = currenthp / maxhp;
         healthBarFill.fillAmount = fill;
+
+        if (currenthp <= 0)
+        {
+            DeadGui.gameObject.SetActive(true);
+        }
     }
 
     private void MouseFocus(string info)
