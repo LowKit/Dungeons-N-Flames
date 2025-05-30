@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 40bfa1236189f724199f3fd482a1e203
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -659289342280807178
+    second: Ritual Circle - Chalk 1_0
+  - first:
+      213: -8034407054626962572
+    second: Ritual Circle - Chalk 1_1
+  - first:
+      213: 1091364312447885466
+    second: Ritual Circle - Chalk 1_2
+  - first:
+      213: -6245842900148911637
+    second: Ritual Circle - Chalk 1_3
+  - first:
+      213: -8507505325165461917
+    second: Ritual Circle - Chalk 1_4
+  - first:
+      213: -1796484242464908635
+    second: Ritual Circle - Chalk 1_5
+  - first:
+      213: -5598710492940512437
+    second: Ritual Circle - Chalk 1_6
+  - first:
+      213: 1553441873905927872
+    second: Ritual Circle - Chalk 1_7
+  - first:
+      213: 6077742238385330792
+    second: Ritual Circle - Chalk 1_8
+  - first:
+      213: 4343499196769872693
+    second: Ritual Circle - Chalk 1_9
+  - first:
+      213: 5252279790532523901
+    second: Ritual Circle - Chalk 1_10
+  - first:
+      213: 1726290210469970353
+    second: Ritual Circle - Chalk 1_11
+  - first:
+      213: 7764895681368068029
+    second: Ritual Circle - Chalk 1_12
+  - first:
+      213: -775367941073410520
+    second: Ritual Circle - Chalk 1_13
+  - first:
+      213: 2586688698314522503
+    second: Ritual Circle - Chalk 1_14
+  - first:
+      213: -1833329202215916732
+    second: Ritual Circle - Chalk 1_15
+  - first:
+      213: -5394951696374864679
+    second: Ritual Circle - Chalk 1_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 119
+        width: 52
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fcc62516dbb9d6f0800000000000000
+      internalID: -659289342280807178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 154
+        width: 28
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47341181a5d008090800000000000000
+      internalID: -8034407054626962572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_2
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 99
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a90aef35f0e452f00800000000000000
+      internalID: 1091364312447885466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 155
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be18ab569fe4259a0800000000000000
+      internalID: -6245842900148911637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 27
+        width: 113
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36eb4c04bf44fe980800000000000000
+      internalID: -8507505325165461917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_5
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 105
+        width: 45
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aada43891b9117e0800000000000000
+      internalID: -1796484242464908635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_6
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 133
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43570c48726d42b0800000000000000
+      internalID: -5598710492940512437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 134
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c64161672fee8510800000000000000
+      internalID: 1553441873905927872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_8
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 135
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a58535d5a785450800000000000000
+      internalID: 6077742238385330792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_9
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 143
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ba9a1b185374c30800000000000000
+      internalID: 4343499196769872693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_10
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 113
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7777a744a8d3e840800000000000000
+      internalID: 5252279790532523901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_11
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 92
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b10c46dcc305f710800000000000000
+      internalID: 1726290210469970353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_12
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 82
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf88e56b7372cb60800000000000000
+      internalID: 7764895681368068029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_13
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 58
+        width: 12
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826e71637f65d35f0800000000000000
+      internalID: -775367941073410520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_14
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 68
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ffd8f8aa3c5e320800000000000000
+      internalID: 2586688698314522503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_15
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 45
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44be191ddc4be86e0800000000000000
+      internalID: -1833329202215916732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ritual Circle - Chalk 1_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 38
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d46f2d04084125b0800000000000000
+      internalID: -5394951696374864679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Ritual Circle - Chalk 1_0: -659289342280807178
+      Ritual Circle - Chalk 1_1: -8034407054626962572
+      Ritual Circle - Chalk 1_10: 5252279790532523901
+      Ritual Circle - Chalk 1_11: 1726290210469970353
+      Ritual Circle - Chalk 1_12: 7764895681368068029
+      Ritual Circle - Chalk 1_13: -775367941073410520
+      Ritual Circle - Chalk 1_14: 2586688698314522503
+      Ritual Circle - Chalk 1_15: -1833329202215916732
+      Ritual Circle - Chalk 1_16: -5394951696374864679
+      Ritual Circle - Chalk 1_2: 1091364312447885466
+      Ritual Circle - Chalk 1_3: -6245842900148911637
+      Ritual Circle - Chalk 1_4: -8507505325165461917
+      Ritual Circle - Chalk 1_5: -1796484242464908635
+      Ritual Circle - Chalk 1_6: -5598710492940512437
+      Ritual Circle - Chalk 1_7: 1553441873905927872
+      Ritual Circle - Chalk 1_8: 6077742238385330792
+      Ritual Circle - Chalk 1_9: 4343499196769872693
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7806486935524152514}
   destroyDelay: 0.8
-  explosion: {fileID: 0}
+  explosion: {fileID: 8300000, guid: a8ffa367460fdb14a86bc057ed5fa1b0, type: 3}
 --- !u!95 &7806486935524152514
 Animator:
   serializedVersion: 7

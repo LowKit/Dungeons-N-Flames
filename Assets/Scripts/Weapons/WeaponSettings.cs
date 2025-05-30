@@ -7,4 +7,5 @@ public class WeaponSettings : ScriptableObject
     public float dano = 25f;
     public float raioAtaque = 3f;
     public float anguloAtaque = 90f;
+    public float cooldown = 0.5f;
 }

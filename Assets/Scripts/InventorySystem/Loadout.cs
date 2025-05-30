@@ -70,7 +70,6 @@ public class Loadout : MonoBehaviour
         }
 
         GameObject instance = Instantiate(prefab, itemHolder);
-        instance.SetActive(false);
         InitializeItem(instance, item);
     }
     private void DestroyItem(Item item)

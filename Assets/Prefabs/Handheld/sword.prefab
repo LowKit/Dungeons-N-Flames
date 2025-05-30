@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7662379578621513536, guid: 2ae9141f61527664e9cdc37ce9bac488, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,11 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 95930d42867801a4a9dbe171ff94ea7a, type: 2}
+  keepActive: 0
   playerController: {fileID: 0}
   loadout: {fileID: 0}
   inimigoLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1408
   efeitoAtaquePrefab: {fileID: 6416448244970830223}
   settings: {fileID: 11400000, guid: e8f90c82d9601ca448a0571074b5ae38, type: 2}
   particlSystem: {fileID: 8313132795269595377}

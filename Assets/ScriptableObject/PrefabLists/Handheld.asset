@@ -21,3 +21,5 @@ MonoBehaviour:
     prefab: {fileID: 8561444738209957309, guid: e2447932e9953b043849f1d6af64de55, type: 3}
   - referenceKey: bow
     prefab: {fileID: 7569226709900992957, guid: af859745904fdaa41aefe430cf5c16d1, type: 3}
+  - referenceKey: totem
+    prefab: {fileID: 7238908962430259008, guid: 1f346b2f00939d547a798beb8a041635, type: 3}

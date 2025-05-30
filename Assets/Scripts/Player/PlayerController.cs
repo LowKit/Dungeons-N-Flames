@@ -102,7 +102,17 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
         OnHealthChange?.Invoke(currentHeath, settings.maxHealth);
     }
+    public void HealPlayer(float amount)
+    {
+        currentHeath += amount;
+        if (currentHeath >= settings.maxHealth)
+        {
+            currentHeath = settings.maxHealth;
+        }
+
+        OnHealthChange?.Invoke(currentHeath, settings.maxHealth);
+    }
 
     public Vector3 GetMousePosition() => playerCamera.ScreenToWorldPoint(Input.mousePosition);
-
+    public Vector3 GetDirectionToMouse() => (transform.position - GetMousePosition()).normalized;
 }

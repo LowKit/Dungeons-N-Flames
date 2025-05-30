@@ -10,6 +10,7 @@ public class Sword : HandheldItem
     [SerializeField] private ParticleSystem particlSystem;
 
     float multiplier = 1f;
+    float lastAttackTime;
 
     private void OnEnable()
     {
@@ -38,8 +39,11 @@ public class Sword : HandheldItem
     }
     void Atacar()
     {
+        if (IsInAttackCooldown(settings.cooldown)) return;
+
         Vector3 mousePos = PlayerController.instance.GetMousePosition();
         Vector2 direcaoAtaque = (mousePos - transform.position).normalized;
+        lastAttackTime = Time.time;
         particlSystem.Play();
         /* Spawn do efeito visual
         Vector3 spawnPos = transform.position; //+ (Vector3)(direcaoAtaque * raioAtaque * 0.5f); // meio do raio
@@ -63,6 +67,11 @@ public class Sword : HandheldItem
                 {
                     entity.ApplyDamage(settings.dano * multiplier);
                 }
+                if (collider.TryGetComponent(out Projectile projectile))
+                {
+                    Vector2 reflectDirection = (PlayerController.instance.GetMousePosition() - transform.position).normalized;
+                    projectile.Redirect(reflectDirection, PlayerController.instance.GetInstanceID());
+                }
             }
         }
     }
@@ -72,4 +81,6 @@ public class Sword : HandheldItem
         multiplier += increment;
         Debug.Log("Multiplier increased! : " + multiplier);
     }
+
+    private bool IsInAttackCooldown(float cooldown) => Time.time - lastAttackTime < cooldown;
 }
