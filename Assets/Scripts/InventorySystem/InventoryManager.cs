@@ -11,8 +11,6 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Transform itemHolder;
     [SerializeField] private InventoryItem inventoryItemPrefab;
     [SerializeField] private int maxSlots;
-
-    [SerializeField] private bool allowDuplicates = false;
     public float maxDropDistance = 1.5f;
 
     public Item testItem;
@@ -53,7 +51,7 @@ public class InventoryManager : MonoBehaviour
             if (itemInSlot != null && itemInSlot.item == item)
             {
                 // Duplicate item detected
-                if (!allowDuplicates)
+                if (!item.allowDuplicates)
                 {
                     // Still fire event so items like Sword can respond
                     OnItemAdded?.Invoke(item);

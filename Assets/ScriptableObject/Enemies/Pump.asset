@@ -22,5 +22,5 @@ MonoBehaviour:
   detectionDistance: 7.5
   dropChance: 4
   dropRange: 2.25
-  dropType: 
+  dropType: random_pickups
   dropCount: 1
