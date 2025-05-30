@@ -82,12 +82,13 @@ public class UiUpdate : MonoBehaviour
         if (currenthp <= 0)
         {
             DeadGui.gameObject.SetActive(true);
+            PlayerController.instance.ToggleInput(false);
         }
     }
 
     private void MouseFocus(string info)
     {
-        if (Time.timeScale == 0f) return; // Bloqueia a exibição se estiver pausado
+        if (Time.timeScale == 0f) return; // Bloqueia a exibiï¿½ï¿½o se estiver pausado
 
         mouseInfoText.gameObject.SetActive(true);
         InfoText.text = info;

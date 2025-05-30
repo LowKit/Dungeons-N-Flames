@@ -5,7 +5,7 @@ public class MenuController : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("backup");
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void QuitGame()

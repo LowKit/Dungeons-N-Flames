@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     bool podeDash = true;
     bool estaADashar = false;
 
+    bool canInput = true;
+
 
     public float currentHeath;
     public static Action<float, float> OnHealthChange;
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void Update()
     {
-        if (Time.timeScale == 0f) return; // Se o jogo estiver pausado, sai do update
+        if (Time.timeScale == 0f || !canInput) return; // Se o jogo estiver pausado, sai do update
 
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mousePos - transform.position).normalized;
@@ -108,6 +110,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
 
         OnHealthChange?.Invoke(currentHeath, settings.maxHealth);
+    }
+
+    public void ToggleInput(bool toggle)
+    {
+        canInput = toggle;
     }
 
     public Vector3 GetMousePosition() => playerCamera.ScreenToWorldPoint(Input.mousePosition);

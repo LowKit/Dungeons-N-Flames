@@ -119,7 +119,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void DropItems()
     {
         if (settings.dropCount <= 0 || settings.dropType.IsNullOrEmpty()) return;
-        if (Random.Range(0, settings.dropChance) != 0)
+        if (Random.Range(0, settings.dropChance) > 1)
         {
             Debug.Log("[Enemy] Couldnt drop items (No chance) ");
             return;
@@ -143,8 +143,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
             GameObject currentDrop = Instantiate(prefab);
             Vector2 position = new Vector2(
-                Random.Range(-settings.dropRange, settings.dropRange),
-                Random.Range(-settings.dropRange, settings.dropRange)
+                transform.position.x - Random.Range(-settings.dropRange, settings.dropRange),
+                transform.position.y - Random.Range(-settings.dropRange, settings.dropRange)
             );
             currentDrop.transform.position = position;
         }

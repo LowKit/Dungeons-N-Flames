@@ -16,5 +16,7 @@ MonoBehaviour:
   itemName: Health Potion
   itemDescription: This is a Health Potion
   value: 0
-  maxStackSize: 1
+  maxStackSize: 5
   icon: {fileID: 21300000, guid: 0e9f2b047d134dc4f929b00065e64551, type: 3}
+  allowDuplicates: 1
+  canBeEquipped: 1

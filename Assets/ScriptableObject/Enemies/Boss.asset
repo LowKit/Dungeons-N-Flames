@@ -17,10 +17,10 @@ MonoBehaviour:
   canMove: 0
   canAttack: 0
   baseDamage: 20
-  attackCooldown: 1
+  attackCooldown: 0.65
   attackDistance: 3
   detectionDistance: 7.5
-  dropChance: 4
+  dropChance: 1
   dropRange: 2.25
-  dropType: 
+  dropType: boss_pickups
   dropCount: 1
