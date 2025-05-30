@@ -1,21 +1,30 @@
+using System.ComponentModel;
 using UnityEngine;
 
 public class ItemPicker : MonoBehaviour
 {
-    Item[] items = new Item[0];
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Item sword;
+    [SerializeField] private Item bow;
+    [SerializeField] private StartKit kit;
+
+
+    public void PickBow()
     {
-        /*foreach (Item itematual in items)
+        if (InventoryManager.instance.AddItem(bow, 1))
         {
-            //Debug.Log(itematual);
-            //itematual.
-        }*/
+            Debug.Log("Arco adicionado!");
+            kit.choosed();
+        }
+
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PickSword()
     {
-        
+        if (InventoryManager.instance.AddItem(sword, 1))
+        {
+            Debug.Log("Espada adicionada!");
+            kit.choosed();
+        }
     }
 }
