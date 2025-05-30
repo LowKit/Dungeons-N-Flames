@@ -13,4 +13,9 @@ public class MenuController : MonoBehaviour
         Application.Quit();
         Debug.Log("O jogo foi encerrado.");
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
