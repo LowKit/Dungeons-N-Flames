@@ -5,6 +5,7 @@ using System.Collections;
 
 public class UiUpdate : MonoBehaviour
 {
+
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Image mouseInfoText;
     [SerializeField] private TextMeshProUGUI InfoText;
