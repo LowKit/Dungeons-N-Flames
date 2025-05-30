@@ -5,10 +5,11 @@ using System.Collections;
 
 public class UiUpdate : MonoBehaviour
 {
-
+    
     [SerializeField] private Image healthBarFill;
     [SerializeField] private Image mouseInfoText;
     [SerializeField] private TextMeshProUGUI InfoText;
+    [SerializeField] private TextMeshProUGUI InfoDMGText;
 
     [Header("Interact Message Settings")]
     [SerializeField] private TextMeshProUGUI interactMessageText;
@@ -38,6 +39,7 @@ public class UiUpdate : MonoBehaviour
         Interactable.OnFocusEvent += MouseFocus;
         Interactable.OnLoseFocusEvent += MouseNoFocus;
         Interactable.OnInteractEvent += ShowInteractMessage;
+        Weapon.OnDamageDealt += OnDamageDealt;
     }
 
     private void OnDisable()
@@ -46,6 +48,22 @@ public class UiUpdate : MonoBehaviour
         Interactable.OnFocusEvent -= MouseFocus;
         Interactable.OnLoseFocusEvent -= MouseNoFocus;
         Interactable.OnInteractEvent -= ShowInteractMessage;
+        Weapon.OnDamageDealt -= OnDamageDealt;
+    }
+
+    private void OnDamageDealt(float dmg)
+    {
+        mouseInfoText.gameObject.SetActive(true);
+        InfoDMGText.text = System.Convert.ToString(dmg);
+        mouseInfoText.transform.position = Input.mousePosition;
+
+        StartCoroutine(HideDamageTextAfterDelay(1f));
+    }
+
+    private IEnumerator HideDamageTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        mouseInfoText.gameObject.SetActive(false);
     }
 
     private void HealthChage(float currenthp, float maxhp)
