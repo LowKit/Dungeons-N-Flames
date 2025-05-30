@@ -1534,7 +1534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &635646204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4015,7 +4015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1899309146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4099,6 +4099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 1884173025386842154, guid: 6d8b0bb1814b1cd4ea8c20a53e5c8b9b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3917142457646865797, guid: 6d8b0bb1814b1cd4ea8c20a53e5c8b9b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4180,7 +4184,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1857450720089063661, guid: 6d8b0bb1814b1cd4ea8c20a53e5c8b9b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8b0bb1814b1cd4ea8c20a53e5c8b9b, type: 3}

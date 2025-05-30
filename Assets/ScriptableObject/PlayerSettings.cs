@@ -11,4 +11,7 @@ public class PlayerSettings : ScriptableObject
     public float dashVelocidade = 22f;
     public float dashDuracao = 0.15f;
     public float dashCooldown = 1f;
+
+
+    
 }

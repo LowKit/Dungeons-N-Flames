@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public static PlayerController instance;
 
     [Header("Dependecias")]
-    [SerializeField] private PlayerSettings settings;
+    public PlayerSettings settings;
     [SerializeField] private Camera playerCamera;
 
     [Header("Status")]
