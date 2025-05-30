@@ -13,6 +13,7 @@ public class DungeonRoom : MonoBehaviour
     [SerializeField] private int maxEnemyCount = 1;
     [SerializeField] private bool randomizeCount = true;
     [SerializeField] private bool canLeaveImmediately = true;
+    [SerializeField] private bool destroyEnemiesOnLeave = false;
 
     [Header("Interactables")]
     [SerializeField] private GameObject[] interactablePrefabs = new GameObject[0];
@@ -34,15 +35,18 @@ public class DungeonRoom : MonoBehaviour
     }
 
     public void CleanRoom()
+{
+    if (destroyEnemiesOnLeave)
     {
-        for (int i = 0; i < currentEnemies.Count; i++)
+        // Make a copy to safely iterate
+        List<Enemy> enemiesToDestroy = new List<Enemy>(currentEnemies);
+        foreach (Enemy currentEnemy in enemiesToDestroy)
         {
-            Enemy currentEnemy = currentEnemies[i];
-
             RemoveEnemy(currentEnemy);
             Destroy(currentEnemy.gameObject);
         }
     }
+}
 
     private void SpawnEnemies()
     {
@@ -114,7 +118,7 @@ public class DungeonRoom : MonoBehaviour
             return;
         }
 
-          // Create and populate a Vector2 array with spawn positions
+        // Create and populate a Vector2 array with spawn positions
         Vector2[] spawnPositions;
         if (interactableSpawns != null && interactableSpawns.Length > 0)
         {

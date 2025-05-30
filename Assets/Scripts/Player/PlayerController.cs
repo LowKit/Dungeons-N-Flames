@@ -70,9 +70,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         // Set new position
         transform.position = position;
-
-        // Optional: add some visual effect or sound to indicate warp
-        Debug.Log("Player warped to: " + position);
     }
 
     System.Collections.IEnumerator FazerDash()

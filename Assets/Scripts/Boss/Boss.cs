@@ -66,10 +66,12 @@ public class Boss : Enemy, IDamageable
         UpdateAttackRate(currentStage.attackCooldown);
 
         base.OnDeath += HandleBossDefeat;
+        base.OnHealthChange += DamageSequence;
     }
     private void OnDisable()
     {
         base.OnDeath -= HandleBossDefeat;
+        base.OnHealthChange -= DamageSequence;
     }
 
     private void UpdateAttackRate(float rateMultiplier)
@@ -159,13 +161,23 @@ public class Boss : Enemy, IDamageable
     {
         Debug.Log($"[Boss] Stage {currentStage} Boss defeated.");
         CancelInvoke();
+        DecreaseLight();
         fightStage++;
+    }
+
+    private void DecreaseLight()
+    {
+        DOTween.To(() => mainLight.intensity, x => mainLight.intensity = x, 0, flickerDuration)
+               .OnKill(() => mainLight.intensity = 0);
+
+        DOTween.To(() => mainLight.pointLightOuterRadius, x => mainLight.pointLightOuterRadius = x, 0, flickerDuration)
+               .OnKill(() => mainLight.pointLightOuterRadius = 0);
     }
 
     private void EnterSuddenDeath()
     {
         animator.SetTrigger("Transform");
-        InvokeRepeating(nameof(DoCandleEffect), flickerDuration,flickerDuration);
+        InvokeRepeating(nameof(DoCandleEffect), flickerDuration, flickerDuration);
     }
 
     private void DoCandleEffect()
@@ -180,7 +192,7 @@ public class Boss : Enemy, IDamageable
                .OnKill(() => mainLight.pointLightOuterRadius = randomOuterRadius);
     }
 
-    private void DamageSequence()
+    private void DamageSequence(float health)
     {
         Sequence lightSequence = DOTween.Sequence();
         lightSequence.Append(DOTween.To(() => mainLight.intensity, x => mainLight.intensity = x, 0.2f, 0.7f))

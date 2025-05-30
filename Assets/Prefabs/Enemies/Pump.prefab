@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7824429105710321102}
+  - component: {fileID: 1294188218979985037}
   - component: {fileID: 1075821876637132178}
   - component: {fileID: 4430624935128858299}
-  - component: {fileID: 1294188218979985037}
   - component: {fileID: 5802661577537990523}
   m_Layer: 7
   m_Name: Pump
@@ -35,6 +35,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1294188218979985037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752549586406559988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e43734f6d8f601548aeb1f3de5a8d85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 5cfc5490898690646b891eda996ad11c, type: 2}
+  navMeshAgent: {fileID: 5802661577537990523}
+  isDead: 0
 --- !u!212 &1075821876637132178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -112,21 +127,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1294188218979985037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5752549586406559988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43734f6d8f601548aeb1f3de5a8d85b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 5cfc5490898690646b891eda996ad11c, type: 2}
-  navMeshAgent: {fileID: 5802661577537990523}
-  isDead: 0
 --- !u!195 &5802661577537990523
 NavMeshAgent:
   m_ObjectHideFlags: 0

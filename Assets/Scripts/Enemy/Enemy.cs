@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour, IDamageable
     float difficultyMultiplier = 1;
 
     public event Action OnDeath;
+    public event Action<float> OnHealthChange;
     private void Start()
     {
         playerController = GameObject.FindFirstObjectByType<PlayerController>();
@@ -95,6 +96,8 @@ public class Enemy : MonoBehaviour, IDamageable
             currentHeath = 0;
             OnEnemyDeath();
         }
+        
+        OnHealthChange?.Invoke(currentHeath);
     }
 
     public void UpdateHealth(float health)
