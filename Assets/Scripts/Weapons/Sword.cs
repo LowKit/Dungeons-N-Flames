@@ -66,6 +66,7 @@ public class Sword : Weapon
                 if (collider.TryGetComponent(out IDamageable entity))
                 {
                     entity.ApplyDamage(settings.dano * multiplier);
+                    TriggerOnDamageDealt(settings.dano * multiplier);
                 }
                 if (collider.TryGetComponent(out Projectile projectile))
                 {
