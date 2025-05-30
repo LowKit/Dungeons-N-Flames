@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class DungeonRoom : MonoBehaviour
 {
@@ -23,10 +25,14 @@ public class DungeonRoom : MonoBehaviour
 
     List<Enemy> currentEnemies = new List<Enemy>();
 
+    public event Action OnRoomInitialized;
+
     public void InitializeRoom()
     {
         SpawnEnemies();
         SpawnInteractables();
+
+        OnRoomInitialized?.Invoke();
     }
 
     public bool CanLeave()
@@ -35,18 +41,18 @@ public class DungeonRoom : MonoBehaviour
     }
 
     public void CleanRoom()
-{
-    if (destroyEnemiesOnLeave)
     {
-        // Make a copy to safely iterate
-        List<Enemy> enemiesToDestroy = new List<Enemy>(currentEnemies);
-        foreach (Enemy currentEnemy in enemiesToDestroy)
+        if (destroyEnemiesOnLeave)
         {
-            RemoveEnemy(currentEnemy);
-            Destroy(currentEnemy.gameObject);
+            // Make a copy to safely iterate
+            List<Enemy> enemiesToDestroy = new List<Enemy>(currentEnemies);
+            foreach (Enemy currentEnemy in enemiesToDestroy)
+            {
+                RemoveEnemy(currentEnemy);
+                Destroy(currentEnemy.gameObject);
+            }
         }
     }
-}
 
     private void SpawnEnemies()
     {
@@ -70,7 +76,6 @@ public class DungeonRoom : MonoBehaviour
         {
             spawnPositions = new Vector2[] { transform.position };
         }
-
 
         int count = randomizeCount && maxEnemyCount > 0 ? Random.Range(1, maxEnemyCount) : maxEnemyCount;
 

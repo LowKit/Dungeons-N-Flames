@@ -61,6 +61,8 @@ public class Loadout : MonoBehaviour
             return;
         }
 
+        if(!item.canBeEquipped) return;
+
         GameObject prefab = PrefabManager.Instance.GetObjectPrefab("handheld", item.id);
 
         if (prefab == null)

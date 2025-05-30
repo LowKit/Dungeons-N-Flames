@@ -11,4 +11,6 @@ public class Item : ScriptableObject
     public int value;
     public int maxStackSize;
     public Sprite icon;
+    public bool allowDuplicates = false;
+    public bool canBeEquipped = true;
 }
