@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pump
   m_EditorClassIdentifier: 
   maxHealth: 100
-  walkSpeed: 2
+  walkSpeed: 4
   canMove: 1
   canAttack: 1
   baseDamage: 10

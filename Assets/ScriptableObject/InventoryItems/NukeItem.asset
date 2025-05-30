@@ -17,4 +17,4 @@ MonoBehaviour:
   itemDescription: This is a nuke.
   value: 0
   maxStackSize: 1
-  icon: {fileID: -3769374411695510437, guid: 9aeb75f14a6b7eb448ca8078b1fdd05c, type: 3}
+  icon: {fileID: 21300000, guid: f85b0e9cd72a06b4bbe2e518021a7faa, type: 3}

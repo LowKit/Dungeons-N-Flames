@@ -57,8 +57,8 @@ MonoBehaviour:
   mainLight: {fileID: 3522354665799944955}
   audioSource: {fileID: 6262960583782687934}
   projectilePrefab: {fileID: 7647755824921356000, guid: 72af1906cf938a64aa1bebd237600d80, type: 3}
-  projectileSpeed: 5
-  projectileRate: 5
+  projectileSpeed: 8
+  projectileRate: 1
   fireballClip: {fileID: 0}
   stages:
   - maxHealth: 100
@@ -369,5 +369,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 5}
   m_EdgeRadius: 0

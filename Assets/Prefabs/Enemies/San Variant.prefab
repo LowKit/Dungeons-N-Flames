@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: San Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3621888866723963781, guid: cdd0e8d75b80c5542b7ec8aded6b366e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4825018557572837632, guid: cdd0e8d75b80c5542b7ec8aded6b366e, type: 3}
       propertyPath: m_SortingOrder
       value: 1

@@ -105,6 +105,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -209,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wall - Daub A - Straight - Large - 8x2_0: -2975781395195073037
+      Wall - Daub A - Straight - Large - 8x2_1: -1421553172771423514
+      Wall - Daub A - Straight - Large - 8x2_2: -6374895144913686515
+      Wall - Daub A - Straight - Large - 8x2_3: 6050996615886854919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

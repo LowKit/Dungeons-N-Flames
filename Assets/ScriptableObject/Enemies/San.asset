@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: San
   m_EditorClassIdentifier: 
   maxHealth: 100
-  walkSpeed: 2
+  walkSpeed: 3
   canMove: 1
   canAttack: 1
   baseDamage: 10

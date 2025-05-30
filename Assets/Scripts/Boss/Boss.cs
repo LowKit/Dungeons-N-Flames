@@ -152,9 +152,7 @@ public class Boss : Enemy, IDamageable
         Projectile projectile = projectileGM.GetComponent<Projectile>();
         projectileGM.transform.position = position;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        projectile.Initialize(id, direction, projectileSpeed * speedMultiplier, settings.baseDamage, currentStage.attackSize, angle);
+        projectile.Initialize(id, direction, projectileSpeed * speedMultiplier, settings.baseDamage, currentStage.attackSize);
     }
 
     private void HandleBossDefeat()

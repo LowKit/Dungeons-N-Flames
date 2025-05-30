@@ -23,14 +23,14 @@ public class Projectile : MonoBehaviour
         timer = lifeTime;
     }
 
-    public void Initialize(int _owner, Vector3 _direction, float _speed, float _damage, float _attackSize, float _spriteAngle)
+    public void Initialize(int _owner, Vector3 _direction, float _speed, float _damage, float _attackSize)
     {
         ownerID = _owner;
         direction = _direction;
         speed = _speed;
         damage = _damage;
 
-        RotateSprite(_spriteAngle);
+        RotateSprite();
         SetAttackSize(_attackSize);
         if (cast != null) AudioSource.PlayClipAtPoint(cast, transform.position);
     }
@@ -64,8 +64,9 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private void RotateSprite(float angle)
+    private void RotateSprite()
     {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         spriteTransform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
@@ -88,5 +89,6 @@ public class Projectile : MonoBehaviour
         direction = newDirection.normalized;
         ownerID = newOwnerID;
         timer = lifeTime;
+        RotateSprite();
     }
 }

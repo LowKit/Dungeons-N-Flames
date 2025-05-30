@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e9d4143c19529834981ac6821a04aecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ed2f1d4ea1000f44183081e646304717, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,4 +104,4 @@ MonoBehaviour:
   keepActive: 1
   playerController: {fileID: 0}
   loadout: {fileID: 0}
-  minimumHealth: 30
+  healAmount: 100

@@ -38,10 +38,8 @@ public class Bow : HandheldItem
         Projectile projectile = Instantiate(projectilePrefab);
         projectile.transform.position = position;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
         int id = PlayerController.instance.GetInstanceID();
-        projectile.Initialize(id, direction, projectileSpeed, settings.dano, attackSize, angle);
+        projectile.Initialize(id, direction, projectileSpeed, settings.dano, attackSize);
     }
 
     private bool IsInAttackCooldown(float cooldown) => Time.time - lastAttackTime < cooldown;
